@@ -1,5 +1,5 @@
 const app = require('./app.js');
-const port = 3000;	
+const port = process.env.port;	
 
 // const p = require('./sms.js')
 
