@@ -1,6 +1,6 @@
 const app = require('./app.js');
 const port = process.env.PORT;	
-
+// require('./db/seed2.js')
 // const p = require('./sms.js')
 
 app.listen(port, () => {

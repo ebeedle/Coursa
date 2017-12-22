@@ -181,7 +181,7 @@ function scrapeClasses(term, year) {
   });
 }
 
-// scrapeClasses('spring', 2018);
+scrapeClasses('spring', 2018);
 
 function getTermInfo(term, year) {
   let terms = {
