@@ -1,0 +1,332 @@
+.cf:before,
+.cf:after {
+	display: table;
+	content: '';
+}
+
+.cf:after {
+	clear: both;
+}
+
+.section_name {
+	width: 80%;
+	float: left;
+}
+
+.currently_tracking {
+	font-size: 20px;
+	padding-bottom: 10px;
+	font-weight: bold;
+}
+.tracking {
+	padding: 0 10px;
+}
+.checkbox {
+	width: 10%;
+	float: left;
+}
+
+.section_cont {
+	padding: 0 15px;
+}
+
+.lecture {
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.cf:after {
+	clear: both;
+}
+
+.container_sections_tracked {
+	width: 50%;
+	float: left;
+}
+
+.container_courses_codes {
+	float: left;
+	width: 50%;
+}
+
+.sections {
+	/*height: 225px;
+	overflow: auto;
+	width: 100%;
+	padding: 10px 0;*/
+}
+
+.code_container {
+	/*padding: 10px 0;*/	
+}
+
+.course_container {
+	/*padding: 10px 0;*/
+}
+.title {
+	text-align: center;
+	font-size: 30px;
+	margin-bottom: 50px;
+	color: black;
+}
+.body {
+	margin-top: 25px;
+	text-align: left;
+	font-size: 17px;
+
+}
+
+.explanation {
+	margin-top: 20px;
+	margin-bottom: 40px;
+}
+
+.input {
+	color: black;
+	font-size: 20px;
+}
+
+.detrack {
+	color: blue;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+
+
+.homeBody {
+	font-size: 20px;
+	text-align: center;
+}
+
+.spartan {
+	height: 120px;
+}
+
+
+.header {
+	background: url("https://nbccollegefootballtalk.files.wordpress.com/2012/02/cal-logo.gif") top right no-repeat, #003262;
+	background-size: 155px;
+	height: 120px;
+	font-size: 50px;
+	text-align: center;
+	line-height: 120px;
+	margin-bottom: 10px;
+	color: #FDB515;
+}
+
+@media screen and (max-width: 880px) and (min-width: 700px) {
+	.header {
+		font-size: 40px;
+		background-size: 130px;
+		height: 100px;
+		line-height: 100px;
+	}
+}
+
+@media screen and (max-width: 700px) and (min-width: 535px) {
+	.header {
+		font-size: 30px;
+		background-size: 100px;
+		height: 80px;
+		line-height: 80px;
+	}
+}
+
+@media screen and (max-width: 535px) and (min-width: 430px) {
+	.header {
+		font-size: 30px;
+		background: #003262;
+		height: 80px;
+		line-height: 80px;
+	}
+}
+
+@media screen and (max-width: 430px) and (min-width: 380px) {
+	.header {
+		height: 80px;
+		line-height: 80px;
+		background: #003262;
+		font-size: 25px;
+	}
+}
+
+@media screen and (max-width: 380px) {
+	.header {
+		background: #003262;
+		height: 80px;
+		line-height: 80px;
+		text-align: center;
+		font-size: 25px;
+	}
+}
+
+@media screen and (max-width: 300px) {
+	.header {
+		background: #003262;
+		height: 80px;
+		line-height: 80px;
+		text-align: center;
+		font-size: 20px;
+	}
+}
+
+#example1 {
+    background-image: url(img_flwr.gif), url(paper.gif);
+    background-position: right bottom, left top;
+    background-repeat: no-repeat, repeat;
+}
+
+.sign_up {
+	margin-bottom: 20px;
+	text-align: center;
+	font-size: 30px;
+}
+
+.one {
+	displteay: inline-block;
+}
+
+.input_block {
+	display: block;
+}
+
+.two {
+	height: 100%;
+}
+
+.example {
+	color: blue;
+}
+
+.logout {
+	display: block;
+	text-align: right;
+	cursor: pointer;
+}
+
+.home {
+	margin-bottom: 10px;
+}
+
+.errors {
+	color: red;
+	font-size: 12px;
+}
+
+.message {
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+
+.ib {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.code {
+	transition: .5s;
+	height: 45px;
+	line-height: 45px;
+	padding-left: 10px;
+}
+.code:hover {
+	background: rgb(66, 215, 244);
+	background: rgba(66, 215, 244, .7);
+	cursor: pointer;
+
+}
+
+.codes {
+	/*height: 225px;
+	overflow: auto;
+	width: 100%;*/
+}
+
+.compartment {
+	display: inline-block;
+	width: 50%;
+}
+
+.search {
+	text-align: center;
+}
+
+.tracked {
+/*	height: 225px;
+	overflow: auto;
+	width: 100%;
+	padding: 10px 0;*/
+}
+
+.back {
+	cursor: pointer;
+	margin-top: 10px;
+	padding-left: 10px;
+}
+
+.back:hover {
+	color: grey;
+}
+
+.quarter {
+	height: 225px;
+	overflow: auto;
+	width: 100%;
+	padding: 10px 0;
+}
+	.mobile {
+		display: none;
+	}
+
+@media screen and (max-width: 545px) {
+
+	.container_courses_codes {
+		width: 100%;
+		float: none;
+	}
+	.container_sections_tracked {
+		width: 100%;
+		float: none;
+	}
+
+	.mobile {
+		display: block;
+		text-align: center;
+		font-size: 20px;
+	}
+
+
+	.quarter {
+		height: auto;
+		max-height: 225px;
+	}
+
+	.select {
+		font-weight: bold;
+	}
+
+	.lecture {
+		font-weight: normal;
+		font-style: italic;
+	}
+
+
+}
+
+.message {
+	text-align: center;
+	font-style: italic;
+	font-size: 16px;
+}
+.select {
+	padding: 0 10px;
+	font-style: italic;
+}
+
+#block {
+	display: block;
+}
+/*.place_holder {
+	height: 200px;
+}*/

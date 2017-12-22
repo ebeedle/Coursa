@@ -1,0 +1,38 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+  </script>
+
+</head>
+
+<body>
+  <div class="header">
+    UC Berkely Class Tracker 
+  </div>
+  <div class="sign_up"> 
+    Log In
+  </div>
+  <div class="container">
+    <form action="/login" method="post">
+      <div class="form-group">
+        <label for="email"> Email Address: </label>
+        <input type="email" class="form-control" id="email" name="username" required="required">
+      </div>
+      <div class="form-group">
+        <label for="password"> Password: </label>
+        <input type="password" class="form-control" id="password" name="password" required="required">
+      </div>
+      <button type="submit" class="btn btn-default"> Submit </button>
+    </form>
+    <div style="margin-top: 40px">
+      Or signup <a href="/signup" > here </a>
+      </div>
+  </div>
+</body>
+</html>
