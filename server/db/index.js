@@ -33,7 +33,7 @@ function handleDisconnect() {
 // handleDisconnect();
 
 
-const connection = mysql.createConnection({
+let connection = mysql.createConnection({
   host     : process.env.host,
   user     : process.env.user,
   password : process.env.password,
