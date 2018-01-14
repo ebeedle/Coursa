@@ -22,7 +22,7 @@ if (!db.queryAsync) {
       models2.users.get({email: username})
       .then(users => {
       	if (!users.length) {
-      		cb(null, false)
+      		return cb(null, false)
       	}
       	var user = users[0];
         if (!utils.compareHash(password, user.password, user.salt)) {
