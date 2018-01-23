@@ -90,12 +90,12 @@
 
 
 /* draw any selected text yellow on red background */
-::-moz-selection { color: gold;  background: red; }
+/*::-moz-selection { color: gold;  background: red; }
 ::selection      { color: gold;  background: red; } 
 
-/* draw selected text in a paragraph white on black */
+ draw selected text in a paragraph white on black 
 p::-moz-selection { color: white;  background: black; }
-p::selection      { color: white;  background: black; }
+p::selection      { color: white;  background: black; }*/
 
 .title {
 	text-align: center;
