@@ -18,6 +18,7 @@ class CheckBox extends React.Component {
     const checkbox = (
          <span>
            <input 
+           id="marginFix"
            type="checkbox"
            checked={this.props.isTracking}
            onClick={this.toggle.bind(this)}

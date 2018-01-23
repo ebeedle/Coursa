@@ -2,16 +2,25 @@
  import ReactDom from 'react-dom';
  import $ from 'jquery';
  import ClassesTracked from './classesTracked.jsx' ;
- import CourseCodes from './courseCodes.jsx';
+ import Container from './Container.jsx';
  import Courses from './Courses.jsx';
  import Sections from './Sections.jsx';
 
 
 class Home extends React.Component {
   constructor(props) {
+    //<Sections tracked={this.state.trackedCourses} sections={this.state.sections} currentCourse={this.state.currentCourse} untrackCourse={this.untrack} trackCourse={this.handleSectionSelect} />
     //codes ~ lecture codes (i.e 'CHEM')
     //courses ~ lectures (i.e. 'CHEM 101')
     //sections ~ discussion sections/labs (i.e. 'CHEM 101 LAB 2')
+
+//     sd
+// <div className="tracked quarter">
+// <div className="tracking">
+// <div className="currently_tracking"> Classes You Are Currently Tracking: </div>
+// <ClassesTracked courses={this.state.trackedCourses} untrack={this.untrackCourse} />
+// </div>
+// </div>
     super(props);
     this.state = {
       codes: [],
@@ -139,27 +148,24 @@ class Home extends React.Component {
       <div>
       <div className="message"> Select your course below to get a text when your class opens up! </div>
   	  <div className="cf" onClick={this.clearErrors}>
-        <div className="container_courses_codes">
-          <div className="code_container quarter">
-            <CourseCodes codes={this.state.codes} onClick={this.handleCodeSelect}/>
+        <div className="float">
+          <div className="quarter">
+            <Container type="Course Types" elements={this.state.codes} onClick={this.handleCodeSelect}/>
           </div>
-          <div className="course_container quarter">
-            <Courses courses={this.state.courses} onClick={this.handleCourseSelect}/>
+          <div className="quarter">
+            <Container type="Courses" elements={this.state.courses} onClick={this.handleCourseSelect}/>
           </div>
         </div>
-        <div className="container_sections_tracked">
-          <div className="sections quarter"> 
-             <Sections tracked={this.state.trackedCourses} sections={this.state.sections} currentCourse={this.state.currentCourse} untrackCourse={this.untrack} trackCourse={this.handleSectionSelect} />
+        <div className="float">
+          <div className="quarter"> 
+            <Container type="Sections" tracked={this.state.trackedCourses} sections={this.state.sections} currentCourse={this.state.currentCourse} untrackCourse={this.untrack} trackCourse={this.handleSectionSelect} />
           </div>
+          <div className="quarter"> 
+            <Container type="Currently Tracking" courses={this.state.trackedCourses} untrack={this.untrackCourse} />
+          </div>
+        </div>
+      </div>
           <div className="errors"> </div>
-          <div className="tracked quarter">
-            <div className="tracking">
-              <div className="currently_tracking"> Classes You Are Currently Tracking: </div>
-              <ClassesTracked courses={this.state.trackedCourses} untrack={this.untrackCourse} />
-            </div>
-          </div>
-        </div>
-  	  </div>
       </div>
 	  )
   }
@@ -172,4 +178,4 @@ class Home extends React.Component {
  	document.getElementById('app')
  )
 
- export default home;
+ export default Home;

@@ -2,8 +2,6 @@ import React from 'react';
 
 function Courses(props) {
   let courses = props.courses;
-  console.log('props :', props);
-  console.log('courses :', courses);
   let sortedCourses = courses.sort((a, b) => {
     return a.name.localeCompare(b.name);
   })

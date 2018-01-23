@@ -1,5 +1,6 @@
 var db = require('../db/index.js')
 
+
 var reduceOb = (options, cb, start) => {
 	var keys = Object.keys(options);
 	for (var i = 0; i < keys.length; i++) {
@@ -28,6 +29,7 @@ class Model {
   	return db.queryAsync(query).spread(data => data)
   }
 	get(params, cols, extra) {
+    console.log("db :", db)
     //cols is an array;
 		var specifications = parseObj(params);
 		var values = specifications.vals;

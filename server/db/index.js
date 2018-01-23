@@ -26,7 +26,7 @@ module.exports = {
         var callback = args[args.length-1];
          //last arg is callback
         pool.getConnection(function(err, connection) {
-          console.log("connection :", connection)
+          
         if(err) {
                 console.log(err);
                 return callback(err);
@@ -86,7 +86,7 @@ module.exports = {
 //   password : process.env.password,
 //   database : process.env.database
 // }
-
+console.log('module.exports :', module.exports)
 // function initializeConnection(config) {
 //     function addDisconnectHandler(connection) {
 //         connection.on("error", function (error) {
