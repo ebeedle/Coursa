@@ -4,3 +4,5 @@ module.exports.secondaryCourses = require('./secondary_courses.js');
 module.exports.users_courses = require('./users_courses.js');
 module.exports.UsersSecondaryCourses = require('./users_secondary_courses.js');
 module.exports.CoursesGeneral = require('./coursesGeneral.js');
+
+// module.exports.courses.create({id: 100000})

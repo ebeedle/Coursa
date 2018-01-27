@@ -3,6 +3,10 @@ var request = require('request');
 var db = require('../db/index.js')
 const sc = require('./secondary_courses.js');
 let CoursesGeneral = require('./coursesGeneral.js');
+const Promise = require('bluebird');
+if (!db.queryAsync) {
+    db = Promise.promisifyAll(db);
+}
 
 
 class Courses extends Model {
@@ -137,6 +141,9 @@ class Courses extends Model {
 }
 
 module.exports = new Courses();
+
+// module.exports.getTrackedCourses('spring', '2018')
+// .then(x => console.log(x))
 
 // module.exports.getStatus(20522, 'spring', 2018)
 // .then(x => console.log('x :', x))

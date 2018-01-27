@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test/test.js",
+    "test": "jest --watch",
     "start": "nodemon server/index.js",
     "dev": "webpack -d --watch"
   },
@@ -19,7 +19,6 @@
     "babel-preset-react": "^6.24.1",
     "bluebird": "^3.5.0",
     "body-parser": "^1.18.1",
-    "chai": "^4.1.2",
     "cheerio": "^1.0.0-rc.2",
     "connect-ensure-login": "^0.1.1",
     "cookie-parser": "^1.4.3",
@@ -29,7 +28,6 @@
     "ejs": "^2.5.7",
     "express": "^4.15.4",
     "jquery": "^3.2.1",
-    "mocha": "^3.5.3",
     "morgan": "^1.8.2",
     "mysql": "^2.14.1",
     "nodemailer": "^4.1.0",
@@ -42,5 +40,8 @@
     "request": "^2.81.0",
     "twilio": "^3.10.1",
     "webpack": "^3.6.0"
+  },
+  "devDependencies": {
+    "jest": "^22.1.4"
   }
 }

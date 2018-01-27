@@ -13,7 +13,9 @@ let pool = mysql.createPool({
   host     : process.env.host,
   user     : process.env.user,
   password : process.env.password,
-  database : process.env.database
+  database : process.env.database,
+  
+
 })
 
 module.exports = {
@@ -86,7 +88,7 @@ module.exports = {
 //   password : process.env.password,
 //   database : process.env.database
 // }
-console.log('module.exports :', module.exports)
+
 // function initializeConnection(config) {
 //     function addDisconnectHandler(connection) {
 //         connection.on("error", function (error) {

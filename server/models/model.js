@@ -63,8 +63,6 @@ class Model {
   delete(options) {
   	let parsedOptions = parseObj(options);
   	let query = `delete from ${this.table} where ${parsedOptions.keys.join(' and ')}`
-  	console.log("query ", query);
-  	console.log("parsedOptionsvals :", parsedOptions.vals)
   	return db.queryAsync(query, parsedOptions.vals).spread(data => data)
   }
 
