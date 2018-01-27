@@ -46,7 +46,10 @@ class Home extends React.Component {
         codes: codes
       })
     })
-    .fail(() => this.throwError())
+    .fail(() => {
+      console.log('couldnt get codes');
+      this.throwError()
+    })
     $.get('/trackedCourses')
     .done(data => {
       let trackedCourses = JSON.parse(data);
@@ -54,7 +57,10 @@ class Home extends React.Component {
         trackedCourses: trackedCourses,
       })
     })
-    .fail(() => this.throwError())
+    .fail(() => {
+      console.log('couldnt get tracked courses')
+      this.throwError()
+    })
   }
 
   handleCodeSelect(code) {

@@ -1,14 +1,6 @@
-let db = require('../server/db');
+//db is defined in test-setup.js
 const { courses, users, users_courses, testFunctions } = require('../server/models')
-const Promise = require('bluebird');
 
-
-
-beforeAll(() => {
-  if (!db.queryAsync) {
-    db = Promise.promisifyAll(db);
-  }
-})
 
 describe('courses', () => {
   beforeAll(() => {

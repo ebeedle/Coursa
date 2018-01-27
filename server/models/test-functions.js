@@ -1,6 +1,5 @@
 const {courses, users, users_courses} = require('./index.js')
 
-console.log('testing from test.js')
 function seedCoursesForTesting() {
   return new Promise (
     function(resolve, reject) {
