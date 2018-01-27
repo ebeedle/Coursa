@@ -1,5 +1,5 @@
 const db = require('./server/db/index.js')
-const models = require('./server/models/index2.js')
+const models = require('./server/models')
 
 
 

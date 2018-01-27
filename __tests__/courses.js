@@ -1,28 +1,17 @@
 let db = require('../server/db');
-const {courses, users, users_courses} = require('../server/models/index2.js')
+const {courses, users, users_courses} = require('../server/models')
 const Promise = require('bluebird');
-// console.log('db :', db);
-// console.log('course models :', courses)
 
-function sum(a, b) {
-  return a + b;
-}
 
 beforeAll(() => {
   if (!db.queryAsync) {
     db = Promise.promisifyAll(db);
-}
-  //connect to db
-  //insert course into db
-})
-
-afterAll(() => {
-
-  //delete course from db;
+  }
 })
 
 describe('courses', () => {
   beforeAll(() => {
+
     return courses.create({id: 100000, code: 'ABCD', name: 'test', term: 'spring', year: '2018' })
       .then(() => {
         return users.create({id: 100000, email: 'testuserBerkScanner@gmail.com'})

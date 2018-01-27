@@ -6,7 +6,7 @@ var sendEmail = require('./email.js');
 var db = require('./db/index.js');
 const Promise = require('bluebird');
 var mysql = require('mysql');
-var models = require('./models/index2.js');
+var models = require('./models');
 const textUser = require('./sms.js');
 let current = require('./models/courses.js').current;
 // console.log('current :', current);

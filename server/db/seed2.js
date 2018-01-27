@@ -5,8 +5,8 @@ var axios = require('axios');
 const Promise = require('bluebird');
 let requestP = Promise.promisify(request);
 var db = require('./index.js')
-let courseModel = require('../models/index2.js').courses;
-let secondaryCourses = require('../models/index2.js').secondaryCourses;
+let courseModel = require('../models').courses;
+let secondaryCourses = require('../models').secondaryCourses;
 
 // console.log('secondaryCourses :', secondaryCourses)
 

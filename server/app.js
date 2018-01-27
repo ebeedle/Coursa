@@ -3,9 +3,9 @@ var passport = require('passport');
 var Strategy = require('passport-local').Strategy;
 const bodyParser = require('body-parser');
 const path = require('path');
-var models = require('./models/index.js')
-var utils = require('./lib/hashUtils.js')
-var models2 = require('./models/index2.js');
+var models = require('./models')
+var utils = require('./lib/hash-utils.js')
+var models2 = require('./models');
 
 const app = express()
 // require('dotenv').load();

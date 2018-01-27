@@ -1,8 +1,8 @@
 var Model = require('./model.js');
 var request = require('request');
 var db = require('../db/index.js')
-const sc = require('./secondary_courses.js');
-let CoursesGeneral = require('./coursesGeneral.js');
+const sc = require('./secondary-courses.js');
+let CoursesGeneral = require('./courses-general.js');
 const Promise = require('bluebird');
 if (!db.queryAsync) {
     db = Promise.promisifyAll(db);

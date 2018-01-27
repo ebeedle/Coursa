@@ -1,7 +1,7 @@
 var Model = require('./model.js');
-const Models = require('./index2.js')
+const Models = require('./index.js')
 var db = require('../db/index.js')
-const CoursesGeneral = require('./coursesGeneral.js');
+const CoursesGeneral = require('./courses-general.js');
 var request = require('request');
 var numb = 0;
 class SecondaryCourses extends Model {

@@ -1,5 +1,5 @@
 var Model = require('./model.js');
-var utils = require('../lib/hashUtils.js');
+var utils = require('../lib/hash-utils.js');
 
 class Users extends Model {
 	constructor() {
