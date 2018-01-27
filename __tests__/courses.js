@@ -1,6 +1,7 @@
 let db = require('../server/db');
-const {courses, users, users_courses} = require('../server/models')
+const { courses, users, users_courses, testFunctions } = require('../server/models')
 const Promise = require('bluebird');
+
 
 
 beforeAll(() => {
@@ -11,31 +12,11 @@ beforeAll(() => {
 
 describe('courses', () => {
   beforeAll(() => {
-
-    return courses.create({id: 100000, code: 'ABCD', name: 'test', term: 'spring', year: '2018' })
-      .then(() => {
-        return users.create({id: 100000, email: 'testuserBerkScanner@gmail.com'})
-      })
-      .then(user => {
-        let userId = user.insertId;
-        return users_courses.create({id: 100000, user_id: 100000, class_id: 100000})
-      })
-    //insert course with 'testing' code into db
-
-    //create fake user
-    //make fake user sign up for course (add record in users_courses)
-
+    return testFunctions.seedCoursesForTesting()
   })
 
   afterAll(() => {
-    return courses.delete({id: 100000})
-    .then(() => {
-      return users.delete({id: 100000})
-    })
-    .then(() => {
-      return users_courses.delete({id: 100000})
-    })
-    //delete course with 'testing' code 
+    return testFunctions.deleteSeedCoursesForTesting()
   })
   
   test('should be able to find all course codes', () => {
@@ -72,6 +53,50 @@ describe('courses', () => {
       expect(emails.length > 0).toBe(true)
       expect(emails[0].email).toBe('testuserBerkScanner@gmail.com')
     })
+  })
+
+  test('should be able to tell when the database contains the course with specified course number', () => {
+    expect.assertions(1);
+    return courses.isValidCourse(100000)
+    .then(result => {
+      expect(result).toBe(true);
+    })
+  })
+
+  test('should be able to tell when the database does not contain the course with the specified course number', () => {
+    expect.assertions(1);
+    return courses.isValidCourse(1000000)
+    .then(result => {
+      expect(result).toBe(false)
+    })
+  })
+
+  test('should be able to combine lectures and discussions into one array that alternates', () => {
+    let lectures = Array(5).fill(0);
+    let discussions = Array(5).fill(1);
+
+    let combined = courses.combineArrs(discussions, lectures);
+    
+    expect(combined.length === 10).toBe(true);
+    
+    let lastCourse = combined[0];
+    let successiveLectures = 0;
+    let alternatesLecturesWithDiscussions = true;
+    for (let i = 1; i < combined.length; i++) {
+      let currentCourse = combined[i];
+      if (currentCourse === 0) {
+        successiveLectures++;
+      } else {
+        successiveLectures = 0;
+      }
+
+      if (successiveLectures >= 3) {
+        alternatesLecturesWithDiscussions = false;
+        break;
+      }
+    }
+
+    expect(alternatesLecturesWithDiscussions).toBe(true);
   })
 })
 
