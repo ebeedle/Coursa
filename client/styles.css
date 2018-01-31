@@ -329,14 +329,14 @@ select:focus {
 
 @media screen and (max-width: 545px) {
 
-	.container_courses_codes {
+	/*.container_courses_codes {
 		width: 100%;
 		float: none;
 	}
 	.container_sections_tracked {
 		width: 100%;
 		float: none;
-	}
+	}*/
 
 	.mobile {
 		display: block;
@@ -345,18 +345,24 @@ select:focus {
 	}
 
 
-	.quarter {
+	/*.quarter {
 		height: auto;
 		max-height: 225px;
-	}
+	}*/
 
-	.select {
+	/*.select {
 		font-weight: bold;
-	}
+	}*/
 
-	.lecture {
+	/*.lecture {
 		font-weight: normal;
 		font-style: italic;
+	}*/
+
+	.float {
+		float: none;
+		width: 80%;
+		margin: auto;
 	}
 
 
@@ -375,7 +381,6 @@ select:focus {
 #block {
 	display: block;
 }
-
 
 
 /*select {
