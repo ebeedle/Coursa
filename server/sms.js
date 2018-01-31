@@ -1,11 +1,5 @@
 const accountSid = process.env.accountSid;
 const authToken = process.env.authToken;
-
-console.log('accountSid :', accountSid)
-console.log('authToken :', authToken)
-
-// console.log('accountSID :', accountSid)
-// console.log('authToken :', authToken)
 //require the Twilio module and create a REST client 
 var client = require('twilio')(accountSid, authToken); 
 module.exports = function(info) {
@@ -14,7 +8,6 @@ module.exports = function(info) {
   var classNumber = info.number;
   var statusChange = `switched from ${info.oldStatus} to ${info.newStatus}`
   var courseName = info.name;
-  // console.log('info :', info)
   client.messages.create({ 
       to: `+1${info.phoneNumber}`, 
       from: "+19252786052", 
@@ -25,13 +18,7 @@ module.exports = function(info) {
   
 }
 
-// let info = {
-//   email: 'bob@gmail.com',
-//   number: 2344,
-//   oldStatus: 'closed',
-//   newStatus: 'open',
-//   name: 'bio101'
-// }
+
 
 // module.exports(info);
 

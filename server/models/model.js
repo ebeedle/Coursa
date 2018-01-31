@@ -29,7 +29,6 @@ class Model {
   	return db.queryAsync(query).spread(data => data)
   }
 	get(params, cols, extra) {
-    console.log("db :", db)
     //cols is an array;
 		var specifications = parseObj(params);
 		var values = specifications.vals;
@@ -45,7 +44,7 @@ class Model {
     }
 
 		var query = `select ${columns} from ${this.table} where ${str}${extra}`;
-    console.log('query :', query)
+    
 		return db.queryAsync(query, values).spread(data => data)
 	}
 

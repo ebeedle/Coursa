@@ -1,17 +1,25 @@
 //db is defined in test-setup.js
-const { courses, users, users_courses, testFunctions } = require('../server/models')
+const { courses, users, users_courses } = require('../../server/models')
 
 
-describe('courses', () => {
+describe('coursesss', () => {
+  // test('2 + 2 equals 4', () => {
+  //   expect(2 + 2).toBe(4);
+
+  // })
+  // test('expex 2, 2', () => {
+  //   expect(2).toBe(2)
+  // })
   beforeAll(() => {
-    return testFunctions.seedCoursesForTesting()
+    // return testFunctions.seedCoursesForTesting()
   })
 
   afterAll(() => {
-    return testFunctions.deleteSeedCoursesForTesting()
+    // return testFunctions.deleteSeedCoursesForTesting()
   })
   
   test('should be able to find all course codes', () => {
+    
     expect.assertions(1);
     return courses.getAllCourseCodes()
     .then(codes => {
@@ -76,7 +84,7 @@ describe('courses', () => {
     let alternatesLecturesWithDiscussions = true;
     for (let i = 1; i < combined.length; i++) {
       let currentCourse = combined[i];
-      if (currentCourse === 0) {
+      if (currentCourse  === 0) {
         successiveLectures++;
       } else {
         successiveLectures = 0;

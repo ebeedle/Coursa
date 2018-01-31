@@ -20,8 +20,10 @@ function seedCoursesForTesting() {
 }
 
 function deleteSeedCoursesForTesting() {
+
   return new Promise (
     function(resolve, reject) {
+      console.log('deleteing seeded data in db@!!!!!!!!!');
       return courses.delete({id: 100000})
       .then(() => {
         return users.delete({id: 100000})
