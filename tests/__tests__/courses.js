@@ -2,21 +2,18 @@
 const { courses, users, users_courses } = require('../../server/models')
 
 
-describe('coursesss', () => {
-  // test('2 + 2 equals 4', () => {
-  //   expect(2 + 2).toBe(4);
+describe('courses', () => {
 
-  // })
-  // test('expex 2, 2', () => {
-  //   expect(2).toBe(2)
-  // })
-  beforeAll(() => {
-    // return testFunctions.seedCoursesForTesting()
-  })
+  
+  //db has already been populated by setup.js (see environment);
 
-  afterAll(() => {
-    // return testFunctions.deleteSeedCoursesForTesting()
-  })
+  // beforeAll(() => {
+  //   // return testFunctions.seedCoursesForTesting()
+  // })
+
+  // afterAll(() => {
+  //   // return testFunctions.deleteSeedCoursesForTesting()
+  // })
   
   test('should be able to find all course codes', () => {
     

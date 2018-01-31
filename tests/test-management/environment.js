@@ -1,9 +1,4 @@
 const NodeEnvironment = require('jest-environment-node');
-const Promise = require('bluebird');
-let db = require('../../server/db/index.js');
-if (!db.queryAsync) {
-  db = Promise.promisifyAll(db);
-}
 
 class CustomEnvironment extends NodeEnvironment {
   constructor(config) {
@@ -11,9 +6,9 @@ class CustomEnvironment extends NodeEnvironment {
   }
 
   async setup() {
-    this.global.db = db; 
+    // this.global.db = db; 
     console.log('environment setting up !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
-    this.global.yes = 'yes ?????????????'
+    // this.global.yes = 'yes ?????????????'
     await super.setup();
     // this.global.db = db;
     // console.log('thisglobaldbb :', this.global.db)

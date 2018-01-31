@@ -9,7 +9,7 @@ if (!db.queryAsync) {
 }
 
 
-
+//
 class Courses extends Model {
 	constructor() {
 		super('Courses')

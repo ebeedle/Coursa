@@ -63,6 +63,39 @@ class Home extends React.Component {
     })
   }
 
+  deleteActiveClass(type) {
+    console.log('deleting active class')
+    let codeElements;
+    if (type === 'code') {
+      codeElements = $('.code');
+    } else {
+      codeElements = $('.course');
+    }
+    
+    for (let i = 0; i < codeElements.length; i++) {
+      let current = codeElements.eq(i);
+      if (current.hasClass('active')) {
+        current.removeClass('active')
+      } 
+    }
+  }
+
+  addActiveClass(type, match) {
+    let codeElements;
+    if (type === 'code') {
+      codeElements = $('.code');
+    } else {
+      codeElements = $('.course');
+    }
+
+    for (let i = 0; i < codeElements.length; i++) {
+      let current = codeElements.eq(i);
+      if (current.text().trim() === match) {
+        current.addClass('active');
+      }
+    }
+  }
+
   handleCodeSelect(code) {
     $.get('/coursesByCode', {code: code})
     .done(courses => {
@@ -72,9 +105,20 @@ class Home extends React.Component {
       })
     })
     .fail(() => this.throwError())
+    
+    this.deleteActiveClass('course')
+    this.deleteActiveClass('code');
+    this.addActiveClass('code', code)
+
+    
+    //iterate through codes elements
+      //remove highlight classs
+    //iterate through elements
+      //highight class
   }
 
   handleCourseSelect(courseInfo) {
+    console.log('course info :', courseInfo)
     $.get('/sections', {id: courseInfo.id})
     .done(sections => {
       this.setState({
@@ -83,6 +127,11 @@ class Home extends React.Component {
       })
     })
     .fail(() => this.throwError())
+
+    this.deleteActiveClass('course');
+    this.addActiveClass('course', courseInfo.name)
+
+
   }
   
   handleSectionSelect(id, isSection) {

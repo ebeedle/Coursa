@@ -5,16 +5,23 @@ import TrackableSections from './trackableSections.jsx';
 import ClassesTracked from './classesTracked.jsx'
 
 function sortElements(elements, onClick, type) {
+  let className = 'element';
+  if (type === 'Course Types') {
+    className += ' code'
+  } else if (type === 'Courses') {
+    className += ' course'
+  }
+
   if (type === 'Course Types') {
     return elements.map((element, index) => {
-      return <option key={index} onClick={() => {onClick(element)}} className='element'> {element} </option>
+      return <div key={index} onClick={() => {onClick(element)}} className={className}> {element} </div>
     })
   } else {
     let sortedElements = elements.sort((a, b) => {
     return a.name.localeCompare(b.name);
     })
     return sortedElements.map((element, index) => {
-      return <option key={index} onClick={() => {onClick(element)}} className='element'> {element.name} </option>
+      return <div key={index} onClick={() => {onClick(element)}} className={className}> {element.name} </div>
     })
   }
 }
@@ -42,9 +49,9 @@ function Container(props) {
       ) : props.type === 'Currently Tracking' ? (
         <ClassesTracked courses={props.courses} untrack={props.untrack}/>
       ) : (
-        <select id="fill" multiple size="3" >
+        <div id="fill" className="scroll" multiple size="3" >
           {divElements}
-        </select>
+        </div>
       )
     } 
     </div>

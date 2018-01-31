@@ -16,6 +16,7 @@
 .heading {
 	text-align: center;
   font-size: 20px;
+  height: 27.86px;
 }
 .section_name {
 	width: 80%;
@@ -274,12 +275,24 @@ select:focus {
 	line-height: 25px;
 	padding-left: 10px;
 }
-.code:hover {
-/*	background: rgb(66, 215, 244);
-	background: rgba(66, 215, 244, .7);*/
+
+.element:hover {
 	cursor: pointer;
+}
+
+.code {
 
 }
+
+.active {
+	background: #00BFFF;
+}
+/*.code:hover {
+	background: rgb(66, 215, 244);
+	background: rgba(66, 215, 244, .7);
+	cursor: pointer;
+
+}*/
 
 .compartment {
 	display: inline-block;
@@ -362,6 +375,12 @@ select:focus {
 #block {
 	display: block;
 }
+
+
+
+/*select {
+	border-bottom: 1px solid black;
+}*/
 /*.place_holder {
 	height: 200px;
 }*/
