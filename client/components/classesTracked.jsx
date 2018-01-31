@@ -10,7 +10,7 @@ function ClassesTracked(props) {
       }
       let courseInfo = JSON.stringify(info);
       return <div > 
-                <div> {course.number} : {course.name} </div>
+                <div className="tracked"> {course.number} : {course.name} </div>
                 <button type="button" className="btn btn-primary btn-sm" id="block" data-courseinfo = {courseInfo} onClick={props.untrack}> Untrack </button>
              </div>
     })

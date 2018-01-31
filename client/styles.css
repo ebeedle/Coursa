@@ -16,7 +16,7 @@
 .heading {
 	text-align: center;
   font-size: 20px;
-  height: 27.86px;
+  min-height: 27.86px;
 }
 .section_name {
 	width: 80%;
@@ -271,7 +271,7 @@ select:focus {
 
 .element {
 	transition: .5s;
-	height: 25px;
+	min-height: 25px;
 	line-height: 25px;
 	padding-left: 10px;
 	display: block;
@@ -305,6 +305,7 @@ select:focus {
 }
 
 .tracked {
+	font-size: 16px;
 /*	height: 225px;
 	overflow: auto;
 	width: 100%;
@@ -370,7 +371,11 @@ select:focus {
 
 @media screen and (max-width: 375px) {
 	.element {
-		font-size: 12px;
+		font-size: 14px;
+	}
+
+	.tracked {
+		font-size: 14px;
 	}
 }
 
