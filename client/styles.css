@@ -218,9 +218,9 @@ p::selection      { color: white;  background: black; }*/
 	font-size: 30px;
 }
 
-.one {
+/*.one {
 	displteay: inline-block;
-}
+}*/
 
 .input_block {
 	display: block;
@@ -274,6 +274,7 @@ select:focus {
 	height: 25px;
 	line-height: 25px;
 	padding-left: 10px;
+	display: block;
 }
 
 .element:hover {
@@ -327,8 +328,7 @@ select:focus {
 		display: none;
 	}
 
-@media screen and (max-width: 545px) {
-
+@media screen and (max-width: 600px) {
 	/*.container_courses_codes {
 		width: 100%;
 		float: none;
@@ -361,11 +361,17 @@ select:focus {
 
 	.float {
 		float: none;
-		width: 80%;
+		width: 90%;
 		margin: auto;
 	}
 
 
+}
+
+@media screen and (max-width: 375px) {
+	.element {
+		font-size: 12px;
+	}
 }
 
 .message {
