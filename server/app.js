@@ -38,21 +38,23 @@ if (!db.queryAsync) {
 
   
 	passport.serializeUser(function(user, cb) {
-	  console.log('SERIALISING SERIALISING SERIALISING SERIALISING SERIALISING SERIALISING SERIALISING SERIALISING SERIALISING SERIALISING SERIALISING SERIALISING SERIALISING SERIALISING')
+	  console.log('serialize')
 	  cb(null, user.id);
 	});
 
 	passport.deserializeUser(function(id, cb) {
-  console.log(`DESERIALIZING DESERIALIZING DESERIALIZING DESERIALIZING DESERIALIZING DESERIALIZING DESERIALIZING DESERIALIZING DESERIALIZING DESERIALIZING DESERIALIZING DESERIALIZING`);
+    console.log('desearlize')
   //get user info by id and then call it back as second argument
 
   models2.users.get({id: id})
     .then(userInfo => {
+      // console.log('\n\n\n userinfo :', userInfo[0])
     	cb(null, userInfo[0])
     })
 });
 
-app.use(require('morgan')('combined'));
+// app.use(require('morgan')('combined'));
+
 app.use(require('cookie-parser')());
 
 app.use(bodyParser.json());
@@ -96,9 +98,10 @@ app.post('/courseTrack', (req, res) => {
 
 
 app.get ('/trackedCourses', (req, res) => {
+  console.log('trying to track courses')
 	return models2.users_courses.getCoursesTracked(req.user.id)
   .then(data => {
-    console.log('data :', data)
+    
     return models2.UsersSecondaryCourses.getCoursesTracked(req.user.id, data)
   })
 	.then(data => {
@@ -111,11 +114,13 @@ app.get ('/trackedCourses', (req, res) => {
 	
 })
 app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, '../client/landing.html'))
+  // res.sendFile(path.join(__dirname, '../client/landing.html'))
+  res.sendFile(path.join(__dirname, '../public/home.html'))
 })
 
 app.get('/signup', function (req, res) {	
-  res.sendFile(path.join(__dirname, '../client/signup.html'))
+  console.log('trying to signup')
+  res.sendFile(path.join(__dirname, '../public/home.html'))
 })
 
 app.post('/signup', (req, res) => {
@@ -131,13 +136,14 @@ app.post('/signup', (req, res) => {
 })
 
 app.get('/login', (req, res) => {
-	res.sendFile(path.join(__dirname, '../client/login.html'))
+	// res.sendFile(path.join(__dirname, '../client/login.html'))
+  res.sendFile(path.join(__dirname, '../public/home.html'))
 })
 
 app.post('/login',
  passport.authenticate('local', { failureRedirect: '/login' }),
  (req, res) => {
-	console.log('requser', req.user);
+	// console.log('requser', req.user);
 	res.redirect('/home');
 })
 
@@ -150,7 +156,7 @@ app.get('/logout',
   });
 
 app.get('/home',
-require('connect-ensure-login').ensureLoggedIn(),
+// require('connect-ensure-login').ensureLoggedIn(),
 (req, res) => {
 	res.sendFile(path.join(__dirname, '../public/home.html'))
 })
@@ -368,6 +374,15 @@ app.get('/sections', (req, res) => {
     res.send(sections);
   })
   .catch(err => console.log(err))
+})
+
+app.get('/logged-in', (req, res) => {
+  console.log('req.user :', req.user)
+  if (req.user) {
+    res.send('true')
+  } else {
+    res.send('false')
+  }
 })
 
 // app.listen(3000, function () {

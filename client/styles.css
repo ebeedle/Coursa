@@ -105,10 +105,9 @@ p::selection      { color: white;  background: black; }*/
 	color: black;
 }
 .body {
-	margin-top: 25px;
+	/*margin-top: 25px;
 	text-align: left;
-	font-size: 17px;
-
+	font-size: 17px;*/
 }
 
 .explanation {

@@ -2,14 +2,13 @@ import React from 'react';
 import Heading from './Heading.jsx';
 import SingleInput from './SingleInput.jsx';
 
-class Signup extends React.Component {
+class Login extends React.Component {
   constructor() {
     super();
     this.handleInputChange = this.handleInputChange.bind(this);
     this.state = {
       username: '',
       password: '',
-      number: ''
     };
   }
 
@@ -30,7 +29,7 @@ class Signup extends React.Component {
         <Heading />
         <div className="container">
           <div className="sign_up"> 
-            Sign Up
+            Log In
           </div>
           <SingleInput
             title={"Email Address"}
@@ -44,13 +43,6 @@ class Signup extends React.Component {
             type={"password"}
             value={this.state.password}
             onChange={this.handleInputChange} />
-          <SingleInput
-            title={"Phone Number"}
-            name={"number"}
-            type={"number"}
-            value={this.state.number}
-            placeholder={"No dashes or parentheses!"}
-            onChange={this.handleInputChange} />
           <button type="submit" className="btn btn-default"> Submit </button>
         </div>
       </div>
@@ -58,4 +50,4 @@ class Signup extends React.Component {
   }
 }
 
-export default Signup;
+export default Login;

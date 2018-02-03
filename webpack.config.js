@@ -7,7 +7,7 @@ var APP_DIR = path.resolve(__dirname, 'client/components');
 console.log('Appdir', APP_DIR)
 
 var config = {
-  entry: APP_DIR + '/app.jsx',
+  entry: APP_DIR + '/index.jsx',
   output: {
     path: BUILD_DIR,
     filename: 'bundle.js'

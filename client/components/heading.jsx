@@ -1,10 +1,10 @@
 import React from 'react';
 
 
-function Heading(props) {
-  return (
-    <div className="borderBottom heading"> {props.heading} </div>
-  )
-}
+const Heading = () => (
+  <div className="header"> 
+    UC Berkeley Class Tracker
+  </div>
+)
 
 export default Heading;

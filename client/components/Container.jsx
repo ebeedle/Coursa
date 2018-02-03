@@ -1,6 +1,6 @@
 import React from 'react';
 import AvailableClassTypes from './availableClassTypes.jsx';
-import Heading from './heading.jsx';
+import ContainerHeading from './ContainerHeading.jsx';
 import TrackableSections from './trackableSections.jsx';
 import ClassesTracked from './classesTracked.jsx'
 
@@ -43,7 +43,7 @@ function Container(props) {
   
   return (
     <div className="border">
-      <Heading heading={props.type} />
+      <ContainerHeading heading={props.type} />
       {props.type === 'Sections' ? (
           <TrackableSections tracked={props.tracked} sections={props.sections} trackCourse={props.trackCourse} untrackCourse={props.untrackCourse} />
       ) : props.type === 'Currently Tracking' ? (
