@@ -9,6 +9,7 @@
 
 class Home extends React.Component {
   constructor(props) {
+    console.log('homne loading');
     //<Sections tracked={this.state.trackedCourses} sections={this.state.sections} currentCourse={this.state.currentCourse} untrackCourse={this.untrack} trackCourse={this.handleSectionSelect} />
     //codes ~ lecture codes (i.e 'CHEM')
     //courses ~ lectures (i.e. 'CHEM 101')
