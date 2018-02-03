@@ -5,6 +5,7 @@
  import Container from './Container.jsx';
  import Courses from './Courses.jsx';
  import Sections from './Sections.jsx';
+ import Heading from './Heading.jsx';
 
 
 class Home extends React.Component {
@@ -203,6 +204,8 @@ class Home extends React.Component {
   render() {
   	return (
       <div>
+      <Heading />
+      <div className="container">
       <div className="message"> Select your course below to get a text when your class opens up! </div>
   	  <div className="cf" onClick={this.clearErrors}>
         <div className="float">
@@ -223,6 +226,7 @@ class Home extends React.Component {
         </div>
       </div>
           <div className="errors"> </div>
+      </div>
       </div>
 	  )
   }

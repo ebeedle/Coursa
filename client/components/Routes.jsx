@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
-import Home from './app.jsx';
+import Home from './Home.jsx';
 import Signup from './Signup.jsx';
 import Login from './Login.jsx';
 import Landing from './Landing.jsx';
