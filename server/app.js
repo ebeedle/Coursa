@@ -153,8 +153,8 @@ app.post('/login', function(req, res, next) {
     console.log('/login handler', req.body);
     if (err) { return next(err); }
     if (!user) { return res.status(500).json({ error: 'User not found.' }); }
-    console.log("req.user :", req.session.passport.user)
-    console.log("req.user2 :", req.user)
+    // console.log("req.user :", req.session.passport.user)
+    // console.log("req.user2 :", req.user)
     console.log('user :', user);
     req.logIn(user, function(err) {
         if (err) {
