@@ -19,6 +19,7 @@ if (!db.queryAsync) {
 
   passport.use(new Strategy(
 	  function(username, password, cb) {
+      console.log('srategy!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
       models2.users.get({email: username})
       .then(users => {
       	if (!users.length) {
@@ -26,8 +27,10 @@ if (!db.queryAsync) {
       	}
       	var user = users[0];
         if (!utils.compareHash(password, user.password, user.salt)) {
+          console.log('wrong password')
 		      return cb(null, false);
 		    }
+        console.log('right password');
 		    return cb(null, {id: user.id})
       })
       .catch(err => {
@@ -126,12 +129,14 @@ app.get('/signup', function (req, res) {
 app.post('/signup', (req, res) => {
 	return models2.users.handleSignup(req.body.username, req.body.password, req.body.number)
 	  .then(() => {
-      console.log('REDIRECTINGNGKDLGSDKGLKSDGJLDSKJGLDSKJGLDSKJGLKSDJGDSKJGLDKSJGLSKDJGLKDGJLGDSJJDSKLDSGJSKLD')
-	  	res.redirect('/login')
+      res.status(200).json({
+                status: 'Login successful!'
+      });
 	  })
 	  .catch(err => {
-	  	console.log('error :', err)
-	  	res.redirect('/signup')
+      return res.status(500).json({
+                err: 'Could not sign user up'
+      });
 	  })
 })
 
@@ -140,12 +145,71 @@ app.get('/login', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/home.html'))
 })
 
-app.post('/login',
- passport.authenticate('local', { failureRedirect: '/login' }),
- (req, res) => {
-	// console.log('requser', req.user);
-	res.redirect('/home');
-})
+
+app.post('/login', function(req, res, next) {
+  console.log('loggin in')
+  passport.authenticate('local', function(err, user, info) {
+    console.log('error :', err, 'user :', user, 'info :', info)
+    console.log('/login handler', req.body);
+    if (err) { return next(err); }
+    if (!user) { return res.status(500).json({ error: 'User not found.' }); }
+    console.log("req.user :", req.session.passport.user)
+    console.log("req.user2 :", req.user)
+    console.log('user :', user);
+    req.logIn(user, function(err) {
+        if (err) {
+            return res.status(500).json({
+                err: 'Could not log in user'
+            });
+        }
+        res.status(200).json({
+            status: 'Login successful!'
+        });
+    });
+    // return res.status(200).json({success :true})
+    // req.session.save((err) => {
+    //     if (err) {
+    //       console.log('error!!!!!! in session saving')
+    //         return next(err);
+    //     }
+    //     console.log('made ift')
+    //     res.status(200).json({ success: true });
+    // });
+  })(req, res, next);
+});
+
+// app.post('/login', function(req, res, next) {
+//   console.log("trying to auth with login")
+//   passport.authenticate('local', function(err, user, info) {
+//     // console.log('')
+//     if (err) { return next(err) }
+//     if (!user) {
+//       // *** Display message without using flash option
+//       // re-render the login form with a message
+//       return res.send('error')
+//     }
+//     req.logIn(user, function(err) {
+//       if (err) { return next(err); }
+//       return res.send('correct answer')
+//     });
+//   })(req, res, next);
+// });
+
+// passport.authenticate('local', function (err, account) {
+//   console.log('trying to authenticate at login');
+//     req.logIn(account, function() {
+//         res.status(err ? 500 : 200).send(err ? err : account);
+//     });
+// })(this.req, this.res, this.next)
+// )
+
+// app.post('/login',
+//  passport.authenticate('local', { failureRedirect: '/login' }),
+//  (req, res) => {
+//   console.log('authenticated through post login')
+// 	// console.log('requser', req.user);
+// 	res.redirect('/home');
+// })
 
 app.get('/logout',
   function(req, res){

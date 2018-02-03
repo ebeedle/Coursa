@@ -1,14 +1,19 @@
 import React from 'react';
 import Heading from './Heading.jsx';
 import SingleInput from './SingleInput.jsx';
+import $ from 'jquery'
+import { BrowserRouter as Route, Redirect} from 'react-router-dom'
+
 
 class Login extends React.Component {
   constructor() {
     super();
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
     this.state = {
       username: '',
       password: '',
+      redirect: false
     };
   }
 
@@ -23,7 +28,26 @@ class Login extends React.Component {
     });
   }
 
+  handleSubmit(event) {
+    // alert('Your favorite flavor is: ' + this.state.value);
+    //make post request to /login
+    //if authenticated
+
+    event.preventDefault();
+    $.post('/login', { username: this.state.username, password: this.state.password })
+    .done(() => {
+      //redirect to home component
+      this.setState({redirect: true}) 
+    })
+    .fail(e => {
+      alert('error try again :', e)
+    })
+  }
+
   render() {
+    if (this.state.redirect) {
+      return <Redirect to="/home" />;
+    }
     return (
       <div>
         <Heading />
@@ -31,19 +55,21 @@ class Login extends React.Component {
           <div className="sign_up"> 
             Log In
           </div>
-          <SingleInput
-            title={"Email Address"}
-            name={"username"}
-            type={"email"}
-            value={this.state.email}
-            onChange={this.handleInputChange} />
-          <SingleInput
-            title={"Password"}
-            name={"password"}
-            type={"password"}
-            value={this.state.password}
-            onChange={this.handleInputChange} />
-          <button type="submit" className="btn btn-default"> Submit </button>
+          <form onSubmit={this.handleSubmit}>
+            <SingleInput
+              title={"Email Address"}
+              name={"username"}
+              type={"email"}
+              value={this.state.email}
+              onChange={this.handleInputChange} />
+            <SingleInput
+              title={"Password"}
+              name={"password"}
+              type={"password"}
+              value={this.state.password}
+              onChange={this.handleInputChange} />
+            <button type="submit" className="btn btn-default"> Submit </button>
+          </form>
         </div>
       </div>
     )
