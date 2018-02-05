@@ -167,6 +167,8 @@ class Home extends React.Component {
     } else {
       $('.errors').append(`<div> An error occured</div>`)
     }
+    //then scroll to bottom of page so user sees errror
+    $('html, body').animate({scrollTop:$(document).height()}, 'slow');
   }
 
   addCourseToTracked(data, isSection) {
@@ -211,9 +213,8 @@ class Home extends React.Component {
     }
   	return (
       <div>
-      <NavBar />
+      <NavBar additions={['', 'logout']}/>
       <div className="padding-top container">
-        <Logout />
         <div className="message"> Select your course below to get a text when your class opens up! </div>
     	  <div className="cf" onClick={this.clearErrors}>
           <div className="float">
