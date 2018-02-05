@@ -5,7 +5,7 @@
  import Container from './Container.jsx';
  import Courses from './Courses.jsx';
  import Sections from './Sections.jsx';
- import Heading from './Heading.jsx';
+ import NavBar from './NavBar.jsx';
  import Logout from './Logout.jsx';
  import { BrowserRouter as Route, Redirect} from 'react-router-dom'
 
@@ -211,8 +211,8 @@ class Home extends React.Component {
     }
   	return (
       <div>
-      <Heading />
-      <div className="container">
+      <NavBar />
+      <div className="padding-top container">
         <Logout />
         <div className="message"> Select your course below to get a text when your class opens up! </div>
     	  <div className="cf" onClick={this.clearErrors}>

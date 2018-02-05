@@ -417,13 +417,17 @@ select:focus {
 	position: fixed;
 	top: 0;
 	width: 100%;
-	background: rgba(0,0,0,0);
+	background: rgba(0,0,0,.1);
 	transition: background 1s;
 	/*text-align: right;*/
 }
 
 .solid {
-	background: rgba(0,0,0,1);;
+	background: rgba(0,0,0,1);
+}
+
+.solid-always {
+  background: rgba(0,0,0,1);;
 }
 
 /*:active {
@@ -576,9 +580,25 @@ a.nav-topic:hover {
 
 }
 
+.padding-top {
+	padding-top: 75px;
+}
+
 .creator {
 	border-radius: 50%;
 }
+
+.nav-bar a:focus,a:active {
+   color: white;
+   text-decoration: none;
+}
+
+.nav-bar a:hover {
+	text-decoration: none;
+	color: silver;
+}
+
+
 /*select {
 	border-bottom: 1px solid black;
 }*/

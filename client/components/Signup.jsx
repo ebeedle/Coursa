@@ -1,5 +1,5 @@
 import React from 'react';
-import Heading from './Heading.jsx';
+import NavBar from './NavBar.jsx';
 import SingleInput from './SingleInput.jsx';
 import { BrowserRouter as Route, Redirect} from 'react-router-dom'
 
@@ -53,8 +53,8 @@ class Signup extends React.Component {
     }
     return (
       <div>
-        <Heading />
-        <div className="container">
+        <NavBar additions={['', 'login']}/>
+        <div className="container padding-top">
           <div className="sign_up"> 
             Sign Up
           </div>
