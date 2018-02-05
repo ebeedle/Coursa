@@ -50,7 +50,7 @@ const NavBar = props => {
     for (let i = 0; i < adds.length; i++) {
       let add = adds[i];
       if (add === 'logout') {
-        els.push(<a className="nav-topic" href={"http://localhost:3000/logout"}> {links[add]} </a>)
+        els.push(<a className="nav-topic" href={"/logout"}> {links[add]} </a>)
       } else {
         els.push(<Link to={`/${add}`}> <a className="nav-topic" href="#"> {links[add]} </a> </Link>)
       }

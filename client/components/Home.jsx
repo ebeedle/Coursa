@@ -167,7 +167,7 @@ class Home extends React.Component {
     } else {
       $('.errors').append(`<div> An error occured</div>`)
     }
-    //then scroll to bottom of page so user sees errror
+    //then scroll to bottom of page so user sees error
     $('html, body').animate({scrollTop:$(document).height()}, 'slow');
   }
 
@@ -212,7 +212,7 @@ class Home extends React.Component {
       return <Redirect to="/login" />;
     }
   	return (
-      <div>
+      <div className="home-page">
       <NavBar additions={['', 'logout']}/>
       <div className="padding-top container">
         <div className="message"> Select your course below to get a text when your class opens up! </div>

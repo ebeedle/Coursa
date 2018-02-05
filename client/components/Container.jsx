@@ -43,7 +43,7 @@ function Container(props) {
   
   return (
     <div className="border">
-      <ContainerHeading heading={props.type} />
+      <ContainerHeading heading={props.type}/>
       {props.type === 'Sections' ? (
           <TrackableSections tracked={props.tracked} sections={props.sections} trackCourse={props.trackCourse} untrackCourse={props.untrackCourse} />
       ) : props.type === 'Currently Tracking' ? (

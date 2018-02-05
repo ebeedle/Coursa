@@ -11,12 +11,16 @@
 
 .border {
 	border: 1px solid black;
+	border-radius: 5px;
 }
 
 .heading {
 	text-align: center;
   font-size: 20px;
   min-height: 27.86px;
+  background: black;
+  background: rgba(0,0,0,.6);
+  color: white;
 }
 .section_name {
 	width: 80%;
@@ -83,6 +87,7 @@
 #fill {
 	width: 100%;
 	height: 125px;
+	background: rgb(220,220,220)
 }
 
 .scroll {
@@ -251,6 +256,7 @@ p::selection      { color: white;  background: black; }*/
 	color: red;
 	font-size: 12px;
 	text-align: center;
+	padding-bottom: 60px;
 }
 
 .message {
@@ -278,6 +284,9 @@ select:focus {
 	line-height: 25px;
 	padding-left: 10px;
 	display: block;
+	color: white;
+	color: rgba(255,255,255,.8);
+	color: black;
 }
 
 .element:hover {
@@ -290,6 +299,9 @@ select:focus {
 
 .active {
 	background: #00BFFF;
+	background: #337ab7;
+	color: white;
+	color: rgba(255,255,255,.8);
 }
 /*.code:hover {
 	background: rgb(66, 215, 244);
@@ -326,7 +338,11 @@ select:focus {
 }
 
 .quarter {
-	padding: 10px 10px;
+	padding: 30px 20px;
+	background: grey;
+	border: 1px solid black;
+	border-radius: 5px;
+	margin: 15px 10px;
 }
 	.mobile {
 		display: none;
@@ -598,6 +614,9 @@ a.nav-topic:hover {
 	color: silver;
 }
 
+.home-page {
+
+}
 
 /*select {
 	border-bottom: 1px solid black;
