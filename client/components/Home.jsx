@@ -6,6 +6,8 @@
  import Courses from './Courses.jsx';
  import Sections from './Sections.jsx';
  import Heading from './Heading.jsx';
+ import Logout from './Logout.jsx';
+ import { BrowserRouter as Route, Redirect} from 'react-router-dom'
 
 
 class Home extends React.Component {
@@ -30,7 +32,8 @@ class Home extends React.Component {
       courses: [],
       sections: [],
       trackedCourses: [],
-      currentCourse: null
+      currentCourse: null,
+      loggedIn: true
     }
 
     this.handleCodeSelect = this.handleCodeSelect.bind(this);
@@ -62,6 +65,7 @@ class Home extends React.Component {
     })
     .fail(() => {
       console.log('couldnt get tracked courses')
+      this.setState({loggedIn: false})
       this.throwError()
     })
   }
@@ -202,31 +206,35 @@ class Home extends React.Component {
   }
 
   render() {
+    if (this.state.loggedIn === false) {
+      return <Redirect to="/login" />;
+    }
   	return (
       <div>
       <Heading />
       <div className="container">
-      <div className="message"> Select your course below to get a text when your class opens up! </div>
-  	  <div className="cf" onClick={this.clearErrors}>
-        <div className="float">
-          <div className="quarter">
-            <Container type="Course Types" elements={this.state.codes} onClick={this.handleCodeSelect}/>
+        <Logout />
+        <div className="message"> Select your course below to get a text when your class opens up! </div>
+    	  <div className="cf" onClick={this.clearErrors}>
+          <div className="float">
+            <div className="quarter">
+              <Container type="Course Types" elements={this.state.codes} onClick={this.handleCodeSelect}/>
+            </div>
+            <div className="quarter">
+              <Container type="Courses" elements={this.state.courses} onClick={this.handleCourseSelect}/>
+            </div>
           </div>
-          <div className="quarter">
-            <Container type="Courses" elements={this.state.courses} onClick={this.handleCourseSelect}/>
+          <div className="float">
+            <div className="quarter"> 
+              <Container type="Sections" tracked={this.state.trackedCourses} sections={this.state.sections} currentCourse={this.state.currentCourse} untrackCourse={this.untrack} trackCourse={this.handleSectionSelect} />
+            </div>
+            <div className="quarter"> 
+              <Container type="Currently Tracking" courses={this.state.trackedCourses} untrack={this.untrackCourse} />
+            </div>
           </div>
         </div>
-        <div className="float">
-          <div className="quarter"> 
-            <Container type="Sections" tracked={this.state.trackedCourses} sections={this.state.sections} currentCourse={this.state.currentCourse} untrackCourse={this.untrack} trackCourse={this.handleSectionSelect} />
-          </div>
-          <div className="quarter"> 
-            <Container type="Currently Tracking" courses={this.state.trackedCourses} untrack={this.untrackCourse} />
-          </div>
-        </div>
-      </div>
-          <div className="errors"> </div>
-      </div>
+            <div className="errors"> </div>
+        </div>  
       </div>
 	  )
   }
