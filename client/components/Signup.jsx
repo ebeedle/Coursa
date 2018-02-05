@@ -16,12 +16,40 @@ class Signup extends React.Component {
     };
   }
 
+  isNumberValid(number) {
+    if (number.length > 12) {
+      return false;
+    } else if (isNaN(+number[0])) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
+  modifyNumberIfNecessary(number) {
+    //if entry not a number
+    if (number.length === 3 || number.length === 7) {
+      number = number += '-';
+    }
+
+    return number;
+  }
+
   handleInputChange(event) {
     console.log('this.state.password :', this.state.password);
     const target = event.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
+    let value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
     console.log('name :', name, 'value :', value);
+    const isDeletion = value.length < this.state.number.length;
+    if (name === 'number' && !isDeletion) {
+      if (!this.isNumberValid(value)) {
+        return false;
+      } else {
+        value = this.modifyNumberIfNecessary(value);
+      }
+    }
+    console.log('num :', this.state.number.replace(/-/g, ''))
     this.setState({
       [name]: value
     });
@@ -31,12 +59,19 @@ class Signup extends React.Component {
     // alert('Your favorite flavor is: ' + this.state.value);
     //make post request to /login
     //if authenticated
-
+    
     event.preventDefault();
+    if (this.state.number.length !== 12) {
+      alert('Your phone number must be 10 digits long')
+      return false;
+    }
+
+
+    alert('signing up')
     $.post('/signup', {
       username: this.state.username,
       password: this.state.password,
-      number: this.state.number 
+      number: this.state.number.replace(/-/g, '') 
     })
     .done(() => {
       this.setState({redirect: true})
@@ -74,7 +109,7 @@ class Signup extends React.Component {
             <SingleInput
               title={"Phone Number"}
               name={"number"}
-              type={"number"}
+              type={"text"}
               value={this.state.number}
               placeholder={"No dashes or parentheses!"}
               onChange={this.handleInputChange} />
