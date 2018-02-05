@@ -214,7 +214,7 @@ class Home extends React.Component {
   	return (
       <div className="home-page">
       <NavBar additions={['', 'logout']}/>
-      <div className="padding-top container">
+      <div className="padding-top container full-width">
         <div className="message"> Select your course below to get a text when your class opens up! </div>
     	  <div className="cf" onClick={this.clearErrors}>
           <div className="float">

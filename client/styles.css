@@ -338,7 +338,7 @@ select:focus {
 }
 
 .quarter {
-	padding: 30px 20px;
+	padding: 15px 15px;
 	background: grey;
 	border: 1px solid black;
 	border-radius: 5px;
@@ -614,8 +614,8 @@ a.nav-topic:hover {
 	color: silver;
 }
 
-.home-page {
-
+div.full-width {
+	width: 100%;
 }
 
 /*select {
