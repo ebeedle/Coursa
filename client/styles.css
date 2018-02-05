@@ -143,8 +143,8 @@ p::selection      { color: white;  background: black; }*/
 }
 
 
-.header {
-	/*background: url("https://nbccollegefootballtalk.files.wordpress.com/2012/02/cal-logo.gif") top right no-repeat, #003262;*/
+/*.header {
+	background: url("https://nbccollegefootballtalk.files.wordpress.com/2012/02/cal-logo.gif") top right no-repeat, #003262;
 	background: #2040AB;
 	background-size: 155px;
 	height: 120px;
@@ -154,11 +154,11 @@ p::selection      { color: white;  background: black; }*/
 	margin-bottom: 10px;
 	color: white;
 	font-weight: bold;
-}
+}*/
 
 /* rgb(235, 235, 235)  rgb(216, 216, 216)  rgb(255, 255, 255) */
 
-@media screen and (max-width: 880px) and (min-width: 700px) {
+/*@media screen and (max-width: 880px) and (min-width: 700px) {
 	.header {
 		font-size: 40px;
 		background-size: 130px;
@@ -166,35 +166,35 @@ p::selection      { color: white;  background: black; }*/
 		line-height: 100px;
 	}
 }
-
-@media screen and (max-width: 700px) and (min-width: 535px) {
+*/
+/*@media screen and (max-width: 700px) and (min-width: 535px) {
 	.header {
 		font-size: 30px;
 		background-size: 100px;
 		height: 80px;
 		line-height: 80px;
 	}
-}
+}*/
 
-@media screen and (max-width: 535px) and (min-width: 430px) {
+/*@media screen and (max-width: 535px) and (min-width: 430px) {
 	.header {
 		font-size: 30px;
 		background: #003262;
 		height: 80px;
 		line-height: 80px;
 	}
-}
+}*/
 
-@media screen and (max-width: 430px) and (min-width: 380px) {
+/*@media screen and (max-width: 430px) and (min-width: 380px) {
 	.header {
 		height: 80px;
 		line-height: 80px;
 		background: #003262;
 		font-size: 25px;
 	}
-}
+}*/
 
-@media screen and (max-width: 380px) {
+/*@media screen and (max-width: 380px) {
 	.header {
 		background: #003262;
 		height: 80px;
@@ -202,9 +202,9 @@ p::selection      { color: white;  background: black; }*/
 		text-align: center;
 		font-size: 25px;
 	}
-}
+}*/
 
-@media screen and (max-width: 300px) {
+/*@media screen and (max-width: 300px) {
 	.header {
 		background: #003262;
 		height: 80px;
@@ -212,7 +212,7 @@ p::selection      { color: white;  background: black; }*/
 		text-align: center;
 		font-size: 20px;
 	}
-}
+}*/
 
 #example1 {
     background-image: url(img_flwr.gif), url(paper.gif);
@@ -381,8 +381,8 @@ select:focus {
 
 	.float {
 		float: none;
-		width: 90%;
-		margin: auto;
+		width: 100%;
+		/*margin: auto;*/
 	}
 
 
@@ -616,6 +616,9 @@ a.nav-topic:hover {
 
 div.full-width {
 	width: 100%;
+	/*padding-left: 0;
+	padding-right: 0;*/
+	/*background: green;*/
 }
 
 /*select {

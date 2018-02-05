@@ -212,7 +212,7 @@ class Home extends React.Component {
       return <Redirect to="/login" />;
     }
   	return (
-      <div className="home-page">
+      <div>
       <NavBar additions={['', 'logout']}/>
       <div className="padding-top container full-width">
         <div className="message"> Select your course below to get a text when your class opens up! </div>
