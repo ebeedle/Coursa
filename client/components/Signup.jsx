@@ -19,7 +19,7 @@ class Signup extends React.Component {
   isNumberValid(number) {
     if (number.length > 12) {
       return false;
-    } else if (isNaN(+number[0])) {
+    } else if (isNaN(+number[number.length - 1])) {
       return false;
     } else {
       return true;
@@ -32,6 +32,11 @@ class Signup extends React.Component {
       number = number += '-';
     }
 
+    let lastNumber = number[number.length -1];
+    if (lastNumber !== '-' && (number.length === 4 || number.length === 8)) {
+      number = number.slice(0, number.length - 1) + '-' + number[number.length - 1];
+    }
+
     return number;
   }
 
@@ -41,11 +46,13 @@ class Signup extends React.Component {
     let value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
     console.log('name :', name, 'value :', value);
+    //if you're deleting a dash
     const isDeletion = value.length < this.state.number.length;
     if (name === 'number' && !isDeletion) {
       if (!this.isNumberValid(value)) {
         return false;
       } else {
+        //check to make sure that no more than 3 digits in a row
         value = this.modifyNumberIfNecessary(value);
       }
     }
