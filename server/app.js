@@ -427,6 +427,8 @@ app.post('/trackCourse', (req, res) => {
 })
 
 //given and id in body, /submit should track course
+console.log('d :', path.join(__dirname, '/images'))
+app.use('/images', express.static(path.join(__dirname, '/images')))
 
 app.get('/bundle.js', (req, res) => {
 	res.sendFile(path.join(__dirname, '../public/bundle.js'))
@@ -447,6 +449,10 @@ app.get('/logged-in', (req, res) => {
   } else {
     res.send('false')
   }
+})
+
+app.get('/creator.jpg', (req, res) => {
+
 })
 
 // app.listen(3000, function () {
