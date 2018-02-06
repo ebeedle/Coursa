@@ -3,7 +3,7 @@ import React from 'react';
 
 function ContainerHeading(props) {
   return (
-    <div className="borderBottom heading"> {props.heading} </div>
+    <div className="border-bottom heading"> {props.heading} </div>
   )
 }
 

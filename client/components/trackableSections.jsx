@@ -22,7 +22,7 @@ function TrackableSections(props) {
     return (
       <div className='cf element'> 
         <div className="checkbox" > <CheckBox trackCourse={props.trackCourse} untrackCourse={props.untrackCourse} isTracking={isTracking} id={sect.id} isNotSect={sect.isNotSection} /> </div>
-        <div className="section_name"> {sect.name} </div>
+        <div className="section-name"> {sect.name} </div>
       </div>
     )
   })

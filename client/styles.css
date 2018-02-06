@@ -4,7 +4,6 @@
 	content: '';
 }
 
-
 .cf:after {
 	clear: both;
 }
@@ -22,20 +21,22 @@
   background: rgba(0,0,0,.6);
   color: white;
 }
-.section_name {
+
+.section-name {
 	width: 80%;
 	float: left;
 }
 
-.borderBottom {
+.border-bottom {
 	border-bottom: 1px solid black;
 }
 
-.currently_tracking {
+.currently-tracking {
 	font-size: 20px;
 	padding-bottom: 10px;
 	font-weight: bold;
 }
+
 .tracking {
 	padding: 0 10px;
 }
@@ -49,7 +50,7 @@
 	cursor: pointer;
 }
 
-.section_cont {
+.section-cont {
 	padding: 0 15px;
 }
 
@@ -67,23 +68,6 @@
 	float: left;
 }
 
-/*.container_sections_tracked {
-	width: 50%;
-	float: left;
-}
-
-.container_courses_codes {
-	float: left;
-	width: 50%;
-}*/
-
-.sections {
-	/*height: 225px;
-	overflow: auto;
-	width: 100%;
-	padding: 10px 0;*/
-}
-
 #fill {
 	width: 100%;
 	height: 125px;
@@ -94,25 +78,11 @@
 	overflow: auto;
 }
 
-
-/* draw any selected text yellow on red background */
-/*::-moz-selection { color: gold;  background: red; }
-::selection      { color: gold;  background: red; } 
-
- draw selected text in a paragraph white on black 
-p::-moz-selection { color: white;  background: black; }
-p::selection      { color: white;  background: black; }*/
-
 .title {
 	text-align: center;
 	font-size: 30px;
 	margin-bottom: 50px;
 	color: black;
-}
-.body {
-	/*margin-top: 25px;
-	text-align: left;
-	font-size: 17px;*/
 }
 
 .explanation {
@@ -131,8 +101,6 @@ p::selection      { color: white;  background: black; }*/
 	cursor: pointer;
 }
 
-
-
 .homeBody {
 	font-size: 20px;
 	text-align: center;
@@ -141,78 +109,6 @@ p::selection      { color: white;  background: black; }*/
 .spartan {
 	height: 120px;
 }
-
-
-/*.header {
-	background: url("https://nbccollegefootballtalk.files.wordpress.com/2012/02/cal-logo.gif") top right no-repeat, #003262;
-	background: #2040AB;
-	background-size: 155px;
-	height: 120px;
-	font-size: 50px;
-	text-align: center;
-	line-height: 120px;
-	margin-bottom: 10px;
-	color: white;
-	font-weight: bold;
-}*/
-
-/* rgb(235, 235, 235)  rgb(216, 216, 216)  rgb(255, 255, 255) */
-
-/*@media screen and (max-width: 880px) and (min-width: 700px) {
-	.header {
-		font-size: 40px;
-		background-size: 130px;
-		height: 100px;
-		line-height: 100px;
-	}
-}
-*/
-/*@media screen and (max-width: 700px) and (min-width: 535px) {
-	.header {
-		font-size: 30px;
-		background-size: 100px;
-		height: 80px;
-		line-height: 80px;
-	}
-}*/
-
-/*@media screen and (max-width: 535px) and (min-width: 430px) {
-	.header {
-		font-size: 30px;
-		background: #003262;
-		height: 80px;
-		line-height: 80px;
-	}
-}*/
-
-/*@media screen and (max-width: 430px) and (min-width: 380px) {
-	.header {
-		height: 80px;
-		line-height: 80px;
-		background: #003262;
-		font-size: 25px;
-	}
-}*/
-
-/*@media screen and (max-width: 380px) {
-	.header {
-		background: #003262;
-		height: 80px;
-		line-height: 80px;
-		text-align: center;
-		font-size: 25px;
-	}
-}*/
-
-/*@media screen and (max-width: 300px) {
-	.header {
-		background: #003262;
-		height: 80px;
-		line-height: 80px;
-		text-align: center;
-		font-size: 20px;
-	}
-}*/
 
 #example1 {
     background-image: url(img_flwr.gif), url(paper.gif);
@@ -225,11 +121,6 @@ p::selection      { color: white;  background: black; }*/
 	text-align: center;
 	font-size: 30px;
 }
-
-/*.one {
-	displteay: inline-block;
-}*/
-
 .input_block {
 	display: block;
 }
@@ -284,8 +175,6 @@ select:focus {
 	line-height: 25px;
 	padding-left: 10px;
 	display: block;
-	color: white;
-	color: rgba(255,255,255,.8);
 	color: black;
 }
 
@@ -293,22 +182,11 @@ select:focus {
 	cursor: pointer;
 }
 
-.code {
-
-}
-
 .active {
-	background: #00BFFF;
 	background: #337ab7;
 	color: white;
 	color: rgba(255,255,255,.8);
 }
-/*.code:hover {
-	background: rgb(66, 215, 244);
-	background: rgba(66, 215, 244, .7);
-	cursor: pointer;
-
-}*/
 
 .compartment {
 	display: inline-block;
@@ -321,10 +199,6 @@ select:focus {
 
 .tracked {
 	font-size: 16px;
-/*	height: 225px;
-	overflow: auto;
-	width: 100%;
-	padding: 10px 0;*/
 }
 
 .back {
@@ -344,19 +218,12 @@ select:focus {
 	border-radius: 5px;
 	margin: 15px 10px;
 }
-	.mobile {
-		display: none;
-	}
+
+.mobile {
+	display: none;
+}
 
 @media screen and (max-width: 600px) {
-	/*.container_courses_codes {
-		width: 100%;
-		float: none;
-	}
-	.container_sections_tracked {
-		width: 100%;
-		float: none;
-	}*/
 
 	.mobile {
 		display: block;
@@ -364,28 +231,10 @@ select:focus {
 		font-size: 20px;
 	}
 
-
-	/*.quarter {
-		height: auto;
-		max-height: 225px;
-	}*/
-
-	/*.select {
-		font-weight: bold;
-	}*/
-
-	/*.lecture {
-		font-weight: normal;
-		font-style: italic;
-	}*/
-
 	.float {
 		float: none;
 		width: 100%;
-		/*margin: auto;*/
 	}
-
-
 }
 
 @media screen and (max-width: 375px) {
@@ -446,10 +295,6 @@ select:focus {
   background: rgba(0,0,0,1);;
 }
 
-/*:active {
-	color: orange;
-}*/
-
 a.nav-topic:visited {
 	color: white;
 	text-decoration: none;
@@ -458,13 +303,6 @@ a.nav-topic:visited {
 a.nav-topic:hover {
 	text-decoration: none; 
 };
-/*.nav-topic {
-	color: white;
-}*/
-
-/*.nav-topic:hover {
-	text-decoration: none;
-}*/
 
 .icon {
 	font-size: 30px;
@@ -495,7 +333,6 @@ a.nav-topic:hover {
 	margin: auto;
 	padding: 15px 0;
 	text-align: center;
-	
 }
 
 .white {
@@ -530,7 +367,6 @@ a.nav-topic:hover {
     text-align: left;
   }
 }
-
 
 .landing-button {
 	float: left;
@@ -616,14 +452,4 @@ a.nav-topic:hover {
 
 div.full-width {
 	width: 100%;
-	/*padding-left: 0;
-	padding-right: 0;*/
-	/*background: green;*/
 }
-
-/*select {
-	border-bottom: 1px solid black;
-}*/
-/*.place_holder {
-	height: 200px;
-}*/

@@ -15,7 +15,7 @@ function Sections(props) {
   } else if (sections.length && !sections[0].isNotSection) {
     lecture = props.currentCourse.name;
     return (
-      <div className="section_cont">
+      <div className="section-cont">
         <div className="select mobile"> Select A Section To Track </div>
         <div className="lecture"> {lecture} </div>
         <TrackableSections tracked={props.tracked} sections={props.sections} trackCourse={props.trackCourse} untrackCourse={props.untrackCourse} />
@@ -23,7 +23,7 @@ function Sections(props) {
     )
   } else {
     return (
-      <div className="section_cont">
+      <div className="section-cont">
         <div className="select mobile"> Select A Section To Track </div>
         <TrackableSections tracked={props.tracked} sections={props.sections} trackCourse={props.trackCourse} untrackCourse={props.untrackCourse}/>
       </div>

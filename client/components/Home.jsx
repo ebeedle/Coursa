@@ -22,7 +22,7 @@ class Home extends React.Component {
 //     sd
 // <div className="tracked quarter">
 // <div className="tracking">
-// <div className="currently_tracking"> Classes You Are Currently Tracking: </div>
+// <div className="currently-tracking"> Classes You Are Currently Tracking: </div>
 // <ClassesTracked courses={this.state.trackedCourses} untrack={this.untrackCourse} />
 // </div>
 // </div>
