@@ -1,4 +1,4 @@
-import React from 'react';
+  import React from 'react';
 
 class CheckBox extends React.Component {
   constructor(props) {
@@ -16,14 +16,12 @@ class CheckBox extends React.Component {
     console.log('is a section :', this.props.isNotSect)
     // console.log('isTracking :', this.props.isTracking, 'id :', this.props.id, 'is Sect :', this.props.isSect)
     const checkbox = (
-         <span>
            <input 
-           id="marginFix"
+           id="checkbox"
            type="checkbox"
            checked={this.props.isTracking}
            onClick={this.toggle.bind(this)}
            />
-         </span>
     );
 
     return checkbox;

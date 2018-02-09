@@ -3,7 +3,6 @@ import $ from 'jquery';
 import { BrowserRouter as Route, Link } from 'react-router-dom';
 
 
-
 function toggleClass() {
   let navbar = $('.nav-bar');
   if (navbar.hasClass('responsive')) {
@@ -14,10 +13,6 @@ function toggleClass() {
 }
 
 const NavBar = props => {
-/*  <a className="nav-topic"href="#about"> About </a>
-    <a className="nav-topic" href="#"> Our Products </a>
-    <a className="nav-topic" href="#contact"> Contact Us </a>
-*/
 
   let links = {
     'signup': 'Sign Up',
@@ -56,15 +51,7 @@ const NavBar = props => {
       }
     }
   }
-  // console.log('els :', els)
 
-  //if solid always === true
-    //add solid always class
-
-  //login signup
-  //signup
-  //logout
-  
   return (
   <div className={className} id="bob"> 
     <a className="nav-topic left" href="#"> Coursa </a>

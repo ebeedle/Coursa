@@ -45,9 +45,12 @@
 	float: left;
 }
 
-#marginFix {
-	margin: 0;
+#checkbox {
 	cursor: pointer;
+}
+
+.cb {
+	padding: 0 20px 0 5px;
 }
 
 .section-cont {
@@ -176,6 +179,7 @@ select:focus {
 	padding-left: 10px;
 	display: block;
 	color: black;
+	padding: 5px 5px;
 }
 
 .element:hover {
@@ -398,7 +402,7 @@ a.nav-topic:hover {
 .description {
 	font-size: 16px;
 	font-family: Verdana, "Times New Roman", Times, serif;
-	padding: 7px;
+	padding: 4px 7px;
 }
 
 .row-part {

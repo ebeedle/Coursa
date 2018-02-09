@@ -21,7 +21,7 @@ function TrackableSections(props) {
     let isTracking = isCurrentlyTracking(props.tracked, sect);
     return (
       <div className='cf element'> 
-        <div className="checkbox" > <CheckBox trackCourse={props.trackCourse} untrackCourse={props.untrackCourse} isTracking={isTracking} id={sect.id} isNotSect={sect.isNotSection} /> </div>
+        <div className="left cb"> <CheckBox trackCourse={props.trackCourse} untrackCourse={props.untrackCourse} isTracking={isTracking} id={sect.id} isNotSect={sect.isNotSection} /> </div>
         <div className="section-name"> {sect.name} </div>
       </div>
     )
