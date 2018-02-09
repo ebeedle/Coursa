@@ -251,6 +251,7 @@ class Home extends React.Component {
   }
 
   render() {
+    console.log('sdlfjsdfjsldkjfsdkjfl :', this.state.prospectiveCourse)
     if (this.state.loggedIn === false) {
       return <Redirect to="/login" />;
     }
