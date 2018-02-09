@@ -42,12 +42,12 @@ const Landing = () => {
               <div className="home-buttons cf">
                 <div className="landing-button">
                   <Link to="/signup">
-                    <button className="btn btn-primary"> Signup </button>
+                    <button className="btn btn-primary btn-lg"> Signup </button>
                   </Link>
                 </div>
                 <div className="landing-button">
                 <Link to="/login">
-                  <button className="btn btn-primary"> Login </button>
+                  <button className="btn btn-primary btn-lg"> Login </button>
                 </Link>
                 </div>
               </div>

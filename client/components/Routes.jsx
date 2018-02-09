@@ -6,7 +6,6 @@ import Login from './Login.jsx';
 import Landing from './Landing.jsx';
 
 const Routes = () => {
-  console.log('tryig to render routes ');
   return (
     <div>
     <Router>
