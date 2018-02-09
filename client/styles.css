@@ -398,6 +398,7 @@ a.nav-topic:hover {
 .description {
 	font-size: 16px;
 	font-family: Verdana, "Times New Roman", Times, serif;
+	padding: 7px;
 }
 
 .row-part {
