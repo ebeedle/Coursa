@@ -7,9 +7,9 @@ class CheckBox extends React.Component {
   //pass down class ids
   toggle() {
     if (this.props.isTracking) {
-      this.props.untrackCourse(this.props.id, !this.props.isNotSect)
+      this.props.untrackCourse(this.props.info.id, this.props.isSect)
     } else {
-      this.props.trackCourse(this.props.id, !this.props.isNotSect)
+      this.props.trackCourse(this.props.info.id, this.props.info.name, this.props.info.number, this.props.isSect)
     }
   }
   render() {

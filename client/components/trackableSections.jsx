@@ -19,9 +19,17 @@ function TrackableSections(props) {
   })
   let sectionElements = sortedSections.map(sect => {
     let isTracking = isCurrentlyTracking(props.tracked, sect);
+    console.log('sect :', sect)
+    let info = {
+      id: sect.id,
+      isSect: !sect.isNotSect,
+      isTracking: isTracking,
+      name: sect.name,
+      number: sect.number
+    }
     return (
       <div className='cf element'> 
-        <div className="left cb"> <CheckBox trackCourse={props.trackCourse} untrackCourse={props.untrackCourse} isTracking={isTracking} id={sect.id} isNotSect={sect.isNotSection} /> </div>
+        <div className="left cb"> <CheckBox trackCourse={props.trackCourse} untrackCourse={props.untrackCourse} info={info} /> </div>
         <div className="section-name"> {sect.name} </div>
       </div>
     )

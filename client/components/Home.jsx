@@ -7,6 +7,7 @@
  import Sections from './Sections.jsx';
  import NavBar from './NavBar.jsx';
  import Logout from './Logout.jsx';
+ import ProspectiveCourse from './ProspectiveCourse.jsx';
  import { BrowserRouter as Route, Redirect} from 'react-router-dom'
 
 
@@ -33,7 +34,8 @@ class Home extends React.Component {
       sections: [],
       trackedCourses: [],
       currentCourse: null,
-      loggedIn: true
+      loggedIn: true,
+      prospectiveCourse: null
     }
 
     this.handleCodeSelect = this.handleCodeSelect.bind(this);
@@ -43,6 +45,8 @@ class Home extends React.Component {
     this.untrackCourse = this.untrackCourse.bind(this); 
     this.addCourseToTracked = this.addCourseToTracked.bind(this);
     this.throwError = this.throwError.bind(this);
+    this.clearProspectiveCourse = this.clearProspectiveCourse.bind(this);
+    this.trackCourse = this.trackCourse.bind(this);
   }
 
   componentDidMount() {
@@ -141,7 +145,25 @@ class Home extends React.Component {
 
   }
   
-  handleSectionSelect(id, isSection) {
+  handleSectionSelect(id, name, number, isSection) {
+    
+    this.setState({
+      prospectiveCourse : {
+        id: id,
+        name: name,
+        number: number,
+        isSection: isSection
+      }
+    })
+  }
+
+  trackCourse() {
+    if (!this.state.prospectiveCourse) {
+      alert('error: no course selected');
+      return false;
+    }
+    let id = this.state.prospectiveCourse.id;
+    let isSection = this.state.prospectiveCourse.isSection;
     let endpoint = isSection ?  "/trackSection" : "/trackCourse";
     $.post(endpoint, {id: id})
         .done(data => {
@@ -151,6 +173,9 @@ class Home extends React.Component {
           if (status !== true) {
             this.throwError(status);
           } else {
+            //create pop up
+              //on pop up click yes : callAddCourseToTracked
+              //set state for prospective course to be {data, isSection}
             this.addCourseToTracked(data, isSection);
           }
         })
@@ -158,24 +183,32 @@ class Home extends React.Component {
   }
   
   throwError(status) {
-    if (status === 'invalid') {  
-      $('.errors').append(`<div> The course number entered is invalid </div>`)
-    } else if (status === 'tracking') {
-      $('.errors').append(`<div> You are already tracking this course </div>`)
-    } else if (status === 'tracking too many courses') {
-      $('.errors').append(`<div> You are already tracking the maximum of 10 courses </div>`)
-    } else {
-      $('.errors').append(`<div> An error occured</div>`)
+    //set state to prospective course = 
+    this.setState({
+      prospectiveCourse: null
+    }, () => {
+      if (status === 'invalid') {  
+        $('.errors').append(`<div> The course number entered is invalid </div>`)
+      } else if (status === 'tracking') {
+        $('.errors').append(`<div> You are already tracking this course </div>`)
+      } else if (status === 'tracking too many courses') {
+        $('.errors').append(`<div> You are already tracking the maximum of 10 courses </div>`)
+      } else {
+        $('.errors').append(`<div> An error occured</div>`)
+      }
+      //then scroll to bottom of page so user sees error
+      $('html, body').animate({scrollTop:$(document).height()}, 'slow');
     }
-    //then scroll to bottom of page so user sees error
-    $('html, body').animate({scrollTop:$(document).height()}, 'slow');
+      
+    )
   }
 
   addCourseToTracked(data, isSection) {
     var tracked = this.state.trackedCourses.slice();
     tracked.push({name: data.courseName, number: data.courseNumber, id: data.courseId, section: !!isSection});
     this.setState({
-      trackedCourses: tracked 
+      trackedCourses: tracked,
+      prospectiveCourse: null
     })
   }
   untrackCourse(event) {
@@ -203,6 +236,16 @@ class Home extends React.Component {
     .fail(() => this.throwError())
   }
 
+  clearProspectiveCourse() {
+    this.setState({
+      prospectiveCourse: null
+    })
+  }
+
+  // track() {
+  //   this.
+  // }
+
   clearErrors() {
     $('.errors').empty();
   }
@@ -211,8 +254,15 @@ class Home extends React.Component {
     if (this.state.loggedIn === false) {
       return <Redirect to="/login" />;
     }
+
+    //if prospective course.length
+      //return this pass in onclick property
+    //else return this...
   	return (
       <div>
+      {this.state.prospectiveCourse ? (
+        <ProspectiveCourse courseInfo={this.state.prospectiveCourse} onCancel={this.clearProspectiveCourse} onTrack={this.trackCourse} />) : <span> </span>
+      }
       <NavBar additions={['', 'logout']}/>
       <div className="padding-top container full-width">
         <div className="message"> Select your course below to get a text when your class opens up! </div>
