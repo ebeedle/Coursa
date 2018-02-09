@@ -66,9 +66,10 @@ class Signup extends React.Component {
     // alert('Your favorite flavor is: ' + this.state.value);
     //make post request to /login
     //if authenticated
-    
+    console.log('length :', this.state.number.length)
     event.preventDefault();
     if (this.state.number.length !== 12) {
+      console.log('length is not 12 long')
       alert('Your phone number must be 10 digits long')
       return false;
     }
@@ -118,7 +119,6 @@ class Signup extends React.Component {
               name={"number"}
               type={"text"}
               value={this.state.number}
-              placeholder={"No dashes or parentheses!"}
               onChange={this.handleInputChange} />
             <button type="submit" className="btn btn-default"> Submit </button>
           </form>
