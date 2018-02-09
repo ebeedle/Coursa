@@ -304,13 +304,14 @@ a.nav-topic:hover {
 	text-decoration: none; 
 };
 
+
 .icon {
 	font-size: 30px;
 }
 
 .nav-topic {
 	line-height: 60px;
-	float: left;
+	float: right;
 	display: block;
 	text-align: center;
 	padding: 0 16px;
@@ -319,6 +320,9 @@ a.nav-topic:hover {
 }
 
 
+.left {
+	float: left;
+}
 .nav-topic:hover {
 	color: rgb(190,190,190)
 }

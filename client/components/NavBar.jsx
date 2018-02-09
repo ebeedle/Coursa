@@ -26,16 +26,16 @@ const NavBar = props => {
     '' : 'Home'
   }
 
-  $(document).ready(function(){                    
-    $(window).scroll(function(){                          
-        if ($(window).scrollTop() > 3) {
-          console.log('greater')
-          $('.nav-bar').addClass('solid')
-        } else {
-          $('.nav-bar').removeClass('solid')
-        }
-    });
-  });
+  // $(document).ready(function(){                    
+  //   $(window).scroll(function(){                          
+  //       if ($(window).scrollTop() > 3) {
+  //         console.log('greater')
+  //         $('.nav-bar').addClass('solid')
+  //       } else {
+  //         $('.nav-bar').removeClass('solid')
+  //       }
+  //   });
+  // });
 
   let adds = props.additions;
   let className = "nav-bar cf";
@@ -47,7 +47,7 @@ const NavBar = props => {
   // let adds = ['signup', 'login', 'logout']
   let els = [];
   if (adds) {
-    for (let i = 0; i < adds.length; i++) {
+    for (let i = adds.length - 1; i >= 0; i--) {
       let add = adds[i];
       if (add === 'logout') {
         els.push(<a className="nav-topic" href={"/logout"}> {links[add]} </a>)
@@ -68,7 +68,7 @@ const NavBar = props => {
   
   return (
   <div className={className} id="bob"> 
-    <a className="nav-topic"href="/"> Coursa </a>
+    <a className="nav-topic left" href="#"> Coursa </a>
     <a href="javascript:void(0);" className="icon nav-topic" onClick={toggleClass} >&#9776;</a>
     {els}
   </div>
