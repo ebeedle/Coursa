@@ -390,7 +390,11 @@ a.nav-topic:hover {
 }
 
 .large {
-	font-size: 60px;
+	font-size: 85px;
+}
+
+.description {
+	font-size: 18px;
 }
 
 .row-part {

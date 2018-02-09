@@ -38,7 +38,7 @@ const Landing = () => {
             <div className="cf intro">
               <div>
               <div className="large center white"> Coursa </div>
-              <div className="white center"> Get a text when your UC Berkeley class opens up </div>
+              <div className="white center description"> Get a text when your UC Berkeley class opens up </div>
               <div className="home-buttons cf">
                 <div className="landing-button">
                   <Link to="/signup">
