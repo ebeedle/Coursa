@@ -337,6 +337,7 @@ a.nav-topic:hover {
 	margin: auto;
 	padding: 15px 0;
 	text-align: center;
+  font-family: Verdana, "Times New Roman", Times, serif;;
 }
 
 .white {
@@ -391,10 +392,12 @@ a.nav-topic:hover {
 
 .large {
 	font-size: 85px;
+	font-family: Verdana, "Times New Roman", Times, serif;
 }
 
 .description {
 	font-size: 18px;
+	font-family: Verdana, "Times New Roman", Times, serif;
 }
 
 .row-part {
