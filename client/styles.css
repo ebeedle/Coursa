@@ -469,3 +469,42 @@ a.nav-topic:hover {
 div.full-width {
 	width: 100%;
 }
+
+.prospective-course {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,.90);
+	z-index: 1;
+}
+
+
+
+.prospective-course-message {
+	margin: 200px auto 0 auto;
+	margin: 33vh auto 0 auto;
+	height: 200px;
+	height: 33vh;
+	width: 50%;
+	border: 1px solid black;
+	border-radius: 10px;
+	background: rgb(224,224,224);
+	padding: 20px;
+}
+
+.track-message {
+	width: 90%;
+	margin: auto;
+	text-align: center;
+}
+
+.pc-buttons {
+	text-align: center;
+	padding: 5px 0;
+}
+
+.margin-small {
+	margin: 5px;
+}
