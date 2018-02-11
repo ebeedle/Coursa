@@ -33,7 +33,7 @@ class Login extends React.Component {
     // alert('Your favorite flavor is: ' + this.state.value);
     //make post request to /login
     //if authenticated
-
+    console.log('trying to log in')
     event.preventDefault();
     $.post('/login', { username: this.state.username, password: this.state.password })
     .done(() => {
@@ -41,6 +41,7 @@ class Login extends React.Component {
       this.setState({redirect: true}) 
     })
     .fail(e => {
+      console.log('fail')
       alert('error try again :', e)
     })
   }

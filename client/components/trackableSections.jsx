@@ -17,7 +17,9 @@ function TrackableSections(props) {
   let sortedSections = sections.sort((a, b) => {
     return a.name.localeCompare(b.name);
   })
+  console.log('sections :', sortedSections)
   let sectionElements = sortedSections.map(sect => {
+    // console.log('sect :', sect)
     let isTracking = isCurrentlyTracking(props.tracked, sect);
     // console.log('sect :', sect)
     let info = {
@@ -27,6 +29,7 @@ function TrackableSections(props) {
       name: sect.name,
       number: sect.number
     }
+    console.log('available sections :', info)
     return (
       <div className='cf element'> 
         <div className="left cb"> <CheckBox trackCourse={props.trackCourse} untrackCourse={props.untrackCourse} info={info} /> </div>

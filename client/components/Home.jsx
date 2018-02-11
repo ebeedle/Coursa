@@ -146,7 +146,8 @@ class Home extends React.Component {
   }
   
   handleSectionSelect(id, name, number, isSection) {
-    
+    //check to see if there are any errors
+    console.log('isSection :', isSection)
     this.setState({
       prospectiveCourse : {
         id: id,
@@ -219,6 +220,7 @@ class Home extends React.Component {
   }
 
   untrack(id, isSection) {
+    console.log('trying to untrack')
     this.clearErrors();
     $.post( "/untrack", { courseID: id, isSection: isSection})
     .done(data => {
@@ -251,7 +253,8 @@ class Home extends React.Component {
   }
 
   render() {
-    console.log('sdlfjsdfjsldkjfsdkjfl :', this.state.prospectiveCourse)
+    console.log('tracked :',  this.state.trackedCourses);
+    console.log('this.prosp: ', this.state.prospectiveCourse)
     if (this.state.loggedIn === false) {
       return <Redirect to="/login" />;
     }

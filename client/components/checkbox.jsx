@@ -6,20 +6,22 @@ class CheckBox extends React.Component {
   }
   //pass down class ids
   toggle() {
-    if (this.props.isTracking) {
-      this.props.untrackCourse(this.props.info.id, this.props.isSect)
+
+    if (this.props.info.isTracking) {
+      this.props.untrackCourse(this.props.info.id, this.props.info.isSect)
     } else {
-      this.props.trackCourse(this.props.info.id, this.props.info.name, this.props.info.number, this.props.isSect)
+      this.props.trackCourse(this.props.info.id, this.props.info.name, this.props.info.number, this.props.info.isSect)
     }
   }
   render() {
-    console.log('is a section :', this.props.isNotSect)
+    console.log('info :', this.props.info);
+    // console.log('is a section :', this.props.info.isSect)
     // console.log('isTracking :', this.props.isTracking, 'id :', this.props.id, 'is Sect :', this.props.isSect)
     const checkbox = (
            <input 
            id="checkbox"
            type="checkbox"
-           checked={this.props.isTracking}
+           checked={this.props.info.isTracking}
            onClick={this.toggle.bind(this)}
            />
     );

@@ -8,6 +8,8 @@ function ClassesTracked(props) {
         id: course.id,
         section: !!course.section
       }
+
+      console.log(info)
       let courseInfo = JSON.stringify(info);
       return <div > 
                 <div className="tracked"> {course.number} : {course.name} </div>
