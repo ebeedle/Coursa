@@ -35,7 +35,7 @@ class Home extends React.Component {
       trackedCourses: [],
       currentCourse: null,
       loggedIn: true,
-      prospectiveCourse: null
+      prospectiveCourse: {id: 1611, name: "ANTHRO 123A 001 LEC 001", number: 31958, isSection: true}
     }
 
     this.handleCodeSelect = this.handleCodeSelect.bind(this);
@@ -253,8 +253,8 @@ class Home extends React.Component {
   }
 
   render() {
-    console.log('tracked :',  this.state.trackedCourses);
-    console.log('this.prosp: ', this.state.prospectiveCourse)
+    // console.log('tracked :',  this.state.trackedCourses);
+    console.log('this.prosp: ', this.state)
     if (this.state.loggedIn === false) {
       return <Redirect to="/login" />;
     }
