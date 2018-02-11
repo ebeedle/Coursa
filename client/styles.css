@@ -518,7 +518,8 @@ div.full-width {
 @media screen and (-webkit-min-device-pixel-ratio:0) { 
   select,
   textarea,
-  input {
-    font-size: 16px;
+  input,
+  .form-group input {
+    font-size: 16px	;
   }
 }
