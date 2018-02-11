@@ -1,7 +1,7 @@
 import React from 'react'
 
 function ClassesTracked(props) {
-    const trackedClasses =  props.courses.map(course => {
+    const trackedClasses =  props.courses.map((course, i) => {
       let info = {
         name: course.name,
         number: course.number,
@@ -11,7 +11,7 @@ function ClassesTracked(props) {
 
       console.log(info)
       let courseInfo = JSON.stringify(info);
-      return <div > 
+      return <div key={i} > 
                 <div className="tracked"> {course.number} : {course.name} </div>
                 <button type="button" className="btn btn-primary btn-sm" id="block" data-courseinfo = {courseInfo} onClick={props.untrack}> Untrack </button>
              </div>

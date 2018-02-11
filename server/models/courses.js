@@ -7,7 +7,7 @@ var db = require('../db/index.js')
 if (!db.queryAsync) {
       db = Promise.promisifyAll(db);
 }
-
+//
 
 //
 class Courses extends Model {
