@@ -19,12 +19,13 @@ function TrackableSections(props) {
   })
   console.log('sections :', sortedSections)
   let sectionElements = sortedSections.map(sect => {
+    console.log('sect :', sect)
     // console.log('sect :', sect)
     let isTracking = isCurrentlyTracking(props.tracked, sect);
     // console.log('sect :', sect)
     let info = {
       id: sect.id,
-      isSect: !sect.isNotSect,
+      isSect: !sect.isNotSection,
       isTracking: isTracking,
       name: sect.name,
       number: sect.number
