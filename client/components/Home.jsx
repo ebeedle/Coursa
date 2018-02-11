@@ -27,6 +27,7 @@ class Home extends React.Component {
 // <ClassesTracked courses={this.state.trackedCourses} untrack={this.untrackCourse} />
 // </div>
 // </div>
+//{id: 1611, name: "ANTHRO 123A 001 LEC 001", number: 31958, isSection: true}
     super(props);
     this.state = {
       codes: [],
@@ -35,7 +36,7 @@ class Home extends React.Component {
       trackedCourses: [],
       currentCourse: null,
       loggedIn: true,
-      prospectiveCourse: {id: 1611, name: "ANTHRO 123A 001 LEC 001", number: 31958, isSection: true}
+      prospectiveCourse: null
     }
 
     this.handleCodeSelect = this.handleCodeSelect.bind(this);

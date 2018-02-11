@@ -486,13 +486,10 @@ div.full-width {
 .prospective-course-message {
 	margin: 200px auto 0 auto;
 	margin: 33vh auto 0 auto;
-	min-height: 200px;
-	min-height: 33vh;
 	width: 75%;
 	border: 1px solid black;
 	border-radius: 10px;
 	background: rgb(224,224,224);
-	height: 33%;
 	padding: 20px;
 }
 
