@@ -1,6 +1,7 @@
 console.log('seettign up environment (defining db in bob.js)')
 const { testFunctions } = require('../../server/models')
 
+
 module.exports = async function() {
   console.log('./setup.js setting up')
 

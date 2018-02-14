@@ -1,0 +1,427 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login should render correctly 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Login
+    name="button test"
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <NavBar
+          additions={
+            Array [
+              "",
+              "signup",
+            ]
+          }
+        />,
+        <div
+          className="container padding-top"
+        >
+          <div
+            className="sign_up"
+          >
+            Log In
+          </div>
+          <form
+            onSubmit={[Function]}
+          >
+            <SingleInput
+              name="username"
+              onChange={[Function]}
+              title="Email Address"
+              type="email"
+              value={undefined}
+            />
+            <SingleInput
+              name="password"
+              onChange={[Function]}
+              title="Password"
+              type="password"
+              value=""
+            />
+            <button
+              className="btn btn-default"
+              type="submit"
+            >
+               Submit 
+            </button>
+          </form>
+        </div>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "additions": Array [
+            "",
+            "signup",
+          ],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="sign_up"
+            >
+              Log In
+            </div>,
+            <form
+              onSubmit={[Function]}
+            >
+              <SingleInput
+                name="username"
+                onChange={[Function]}
+                title="Email Address"
+                type="email"
+                value={undefined}
+              />
+              <SingleInput
+                name="password"
+                onChange={[Function]}
+                title="Password"
+                type="password"
+                value=""
+              />
+              <button
+                className="btn btn-default"
+                type="submit"
+              >
+                 Submit 
+              </button>
+            </form>,
+          ],
+          "className": "container padding-top",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Log In",
+              "className": "sign_up",
+            },
+            "ref": null,
+            "rendered": "Log In",
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <SingleInput
+                  name="username"
+                  onChange={[Function]}
+                  title="Email Address"
+                  type="email"
+                  value={undefined}
+                />,
+                <SingleInput
+                  name="password"
+                  onChange={[Function]}
+                  title="Password"
+                  type="password"
+                  value=""
+                />,
+                <button
+                  className="btn btn-default"
+                  type="submit"
+                >
+                   Submit 
+                </button>,
+              ],
+              "onSubmit": [Function],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "name": "username",
+                  "onChange": [Function],
+                  "title": "Email Address",
+                  "type": "email",
+                  "value": undefined,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "name": "password",
+                  "onChange": [Function],
+                  "title": "Password",
+                  "type": "password",
+                  "value": "",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": " Submit ",
+                  "className": "btn btn-default",
+                  "type": "submit",
+                },
+                "ref": null,
+                "rendered": " Submit ",
+                "type": "button",
+              },
+            ],
+            "type": "form",
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <NavBar
+            additions={
+              Array [
+                "",
+                "signup",
+              ]
+            }
+          />,
+          <div
+            className="container padding-top"
+          >
+            <div
+              className="sign_up"
+            >
+              Log In
+            </div>
+            <form
+              onSubmit={[Function]}
+            >
+              <SingleInput
+                name="username"
+                onChange={[Function]}
+                title="Email Address"
+                type="email"
+                value={undefined}
+              />
+              <SingleInput
+                name="password"
+                onChange={[Function]}
+                title="Password"
+                type="password"
+                value=""
+              />
+              <button
+                className="btn btn-default"
+                type="submit"
+              >
+                 Submit 
+              </button>
+            </form>
+          </div>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "additions": Array [
+              "",
+              "signup",
+            ],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div
+                className="sign_up"
+              >
+                Log In
+              </div>,
+              <form
+                onSubmit={[Function]}
+              >
+                <SingleInput
+                  name="username"
+                  onChange={[Function]}
+                  title="Email Address"
+                  type="email"
+                  value={undefined}
+                />
+                <SingleInput
+                  name="password"
+                  onChange={[Function]}
+                  title="Password"
+                  type="password"
+                  value=""
+                />
+                <button
+                  className="btn btn-default"
+                  type="submit"
+                >
+                   Submit 
+                </button>
+              </form>,
+            ],
+            "className": "container padding-top",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Log In",
+                "className": "sign_up",
+              },
+              "ref": null,
+              "rendered": "Log In",
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <SingleInput
+                    name="username"
+                    onChange={[Function]}
+                    title="Email Address"
+                    type="email"
+                    value={undefined}
+                  />,
+                  <SingleInput
+                    name="password"
+                    onChange={[Function]}
+                    title="Password"
+                    type="password"
+                    value=""
+                  />,
+                  <button
+                    className="btn btn-default"
+                    type="submit"
+                  >
+                     Submit 
+                  </button>,
+                ],
+                "onSubmit": [Function],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "name": "username",
+                    "onChange": [Function],
+                    "title": "Email Address",
+                    "type": "email",
+                    "value": undefined,
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "name": "password",
+                    "onChange": [Function],
+                    "title": "Password",
+                    "type": "password",
+                    "value": "",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": " Submit ",
+                    "className": "btn btn-default",
+                    "type": "submit",
+                  },
+                  "ref": null,
+                  "rendered": " Submit ",
+                  "type": "button",
+                },
+              ],
+              "type": "form",
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactFifteenAdapter {
+      "options": Object {
+        "supportPrevContextArgumentOfComponentDidUpdate": true,
+      },
+    },
+  },
+}
+`;

@@ -6,7 +6,10 @@
   "jest": {
     "globalSetup": "./tests/test-management/setup.js",
     "globalTeardown": "./tests/test-management/teardown.js",
-    "testEnvironment": "./tests/test-management/environment.js"
+    "testEnvironment": "./tests/test-management/environment.js",
+    "setupFiles": [
+      "./tests/test-management/adaptor.js"
+    ]
   },
   "scripts": {
     "test": "jest --watch",
@@ -47,10 +50,12 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-1": "^6.24.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-15": "^1.0.5",
     "jest": "^22.1.4",
     "jest-environment-node": "^22.1.4",
     "react-router-dom": "^4.2.2",
-    "supertest": "^3.0.0",
+    "react-test-renderer": "^15.6.1",
     "webpack": "^3.10.0"
   }
 }
