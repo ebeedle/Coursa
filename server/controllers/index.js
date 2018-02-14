@@ -3,17 +3,21 @@ const models = require('../models');
 const passport = require('passport');
 
 module.exports.getHomePage = (req, res) => {
+  console.log('gettting home page')
+  // console.log('file path:', path.join(__dirname, '../../public/home.html'))
   res.sendFile(path.join(__dirname, '../../public/home.html'))
 }
 
 module.exports.logIn = (req, res, next) => {
+  console.log("req.bod !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!y :", req.body)
   passport.authenticate('local', (err, user, info) => {
+
     console.log('user :', user)
     if (err) { return next(err); }
-    if (!user) { return res.status(500).json({ error: 'User not found.' }); }
+    if (!user) { return res.status(401).json({ error: 'User not found.' }); }
     req.logIn(user, (err)   => {
         if (err) {
-            return res.status(500).json({
+            return res.status(401).json({
                 err: 'Could not log in user'
             });
         }
@@ -47,7 +51,7 @@ module.exports.signUp = (req, res) => {
       });
     })
     .catch(err => {
-      return res.status(500).json({
+      return res.status(400).json({
                 err: 'Could not sign user up'
       });
     })

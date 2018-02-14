@@ -6,3 +6,11 @@ module.exports.UsersSecondaryCourses = require('./users-secondary-courses.js');
 module.exports.CoursesGeneral = require('./courses-general.js');
 module.exports.testFunctions = require('./test-functions.js');
 module.exports.auth = require('./auth.js');
+
+
+// // module.exports.courses.create({
+// //   name: 'sdlkfjldskfj',
+// // })
+
+// module.exports.courses.delete({name: 'sdlkfjldskfj'})
+// .then(x => console.log(x))

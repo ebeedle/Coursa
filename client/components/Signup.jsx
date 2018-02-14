@@ -75,7 +75,8 @@ class Signup extends React.Component {
     }
 
 
-    alert('signing up')
+    // alert('signing up')
+    // alert('siinnnngnu p')
     $.post('/signup', {
       username: this.state.username,
       password: this.state.password,
@@ -86,7 +87,7 @@ class Signup extends React.Component {
       //redirect to home component
     })
     .fail(e => {
-      alert('an error occurred. Please try again. :', e)
+      alert('An error occurred. Please try again. The email might already be in use')
     })
   }
 

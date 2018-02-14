@@ -27,7 +27,7 @@ passport.deserializeUser((id, cb) => {
     })
 });
 
-// app.use(require('morgan')('combined'));
+// app.use(require('morgan')('combined'));//
 app.use(require('cookie-parser')());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -36,5 +36,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static(path.join(__dirname, '../public')));
 app.use('/', routes);
+
+// console.log('app :', app);
 
 module.exports = app;

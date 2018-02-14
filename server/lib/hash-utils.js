@@ -7,7 +7,7 @@ exports.createHash = (data, salt) => {
 };
 
 exports.compareHash = (attempted, stored, salt) => {
-  return stored === this.createHash(attempted, salt);
+  return stored === exports.createHash(attempted, salt);
 };
 
 exports.createSalt = () => {
