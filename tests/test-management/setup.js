@@ -12,3 +12,4 @@ module.exports = async function() {
   //   global.db = Promise.promisifyAll(db);
   // } 
 }
+// testFunctions.deleteSeedCoursesForTesting()
