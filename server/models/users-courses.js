@@ -1,6 +1,9 @@
 var Model = require('./model.js');
 var db = require('../db/index.js')
-
+const Promise = require('bluebird');
+if (!db.queryAsync) {
+      db = Promise.promisifyAll(db);
+}
 
 class Users_Courses extends Model {
 	constructor() {
@@ -17,7 +20,8 @@ class Users_Courses extends Model {
 }
 
 module.exports = new Users_Courses();
-
+// module.exports.isAlreadyTrackingCourse(100021, 8521)
+// .then(x => console.log('x :', x))
 // var x = module.exports.isAlreadyTrackingCourse(1, 1219)
 // x.then(y => console.log('y :', y))
 // module.exports.getNumberOfRecordsByUser(1)

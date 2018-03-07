@@ -125,6 +125,9 @@ class SecondaryCourses extends Model {
 //   db.queryAsync(query).spread(courses => courses)
 // }
 module.exports = new SecondaryCourses();
+
+// module.exports.getTrackedSections('spring', 2018)
+// .then(x => console.log('x :', x))
 // module.exports.getNumberOfRecordsByUser(1)
 // .then(x => console.log('x :', x))
 // .catch(e => console.log('e :', e))

@@ -8,6 +8,9 @@ module.exports.testFunctions = require('./test-functions.js');
 module.exports.auth = require('./auth.js');
 
 
+
+// x = module.exports.secondaryCourses.getSectionsForCourse(14301)
+// .then(x => console.log('x :', x))
 // // module.exports.courses.create({
 // //   name: 'sdlkfjldskfj',
 // // })
